@@ -1,0 +1,42 @@
+.footer {
+    background: #031B34;
+    color: #F9F8F8;
+}
+
+.gridCont {
+    display: grid;
+    grid-template-columns: 37% 33% 30%;
+    text-align: left;
+    padding: 4rem;
+}
+
+.gridItm {
+    text-align: justify;
+    /* text-align: center; */
+    display: flex;
+    /* padding: 0 2rem; */
+    flex-direction: column;
+}
+
+#link {
+    margin-bottom: 1rem;
+}
+
+.gridHead {
+    padding-left: 4rem;
+    font-weight: 700;
+}
+
+.gridDesc,
+.socials {
+    padding-left: 4rem;
+    font-weight: 400;
+}
+
+.socials>img{
+    padding-right: 1rem;
+}
+
+.fb {
+    scale: 0.8;
+}
