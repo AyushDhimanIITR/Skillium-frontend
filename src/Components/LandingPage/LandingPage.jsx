@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./landingPage.module.css";
-import illustration from "../../Assets/HomePage .svg";
+import illustration from "../../Assets/HomePage.svg";
 import thinkIcon from "../../Assets/list (1).svg";
 import moneyIcon from "../../Assets/list (2).svg";
 import searchIcon from "../../Assets/list (3).svg";
