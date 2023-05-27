@@ -1,18 +1,20 @@
 import React from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import LandingPage from "./Components/LandingPage/LandingPage";
-import Programs from "./Components/Programs/Programs";
-import About from "./Components/About/About";
-import Footer from "./Components/Footer/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./Components/Login/Login";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <LandingPage />
-      <Programs />
-      <About />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navbar />} >
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/login" element={<Login />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

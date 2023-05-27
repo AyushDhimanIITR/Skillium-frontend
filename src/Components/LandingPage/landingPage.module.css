@@ -2,6 +2,7 @@
     background: #040C18;
     /* height: 100vh; */
     overflow-y: hidden;
+    z-index: -10;
 }
 
 .main {
@@ -15,6 +16,10 @@
     color: #F9F8F8;
 }
 
+.contentRight{
+    padding-top: 6rem;
+}
+
 .heading,
 .heading2 {
     font-size: 4rem;
@@ -22,6 +27,69 @@
     font-weight: 800;
     padding: 0;
     margin: 0;
+    z-index: 0;
+}
+
+@keyframes transform {
+
+    0%,
+    100% {
+        border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%;
+    }
+
+    20% {
+        border-radius: 37% 63% 51% 49% / 37% 65% 35% 63%;
+    }
+
+    40% {
+        border-radius: 36% 64% 64% 36% / 64% 48% 52% 36%;
+    }
+
+    60% {
+        border-radius: 37% 63% 51% 49% / 30% 30% 70% 70%;
+    }
+
+    80% {
+        border-radius: 40% 60% 42% 58% / 41% 51% 49% 59%;
+    }
+}
+
+
+@keyframes movement_one {
+
+    0%,
+    100% {
+        transform: none;
+    }
+
+    50% {
+        transform: translate(50%, 20%) rotateY(10deg) scale(1.2);
+    }
+}
+
+@keyframes movement_two {
+
+    0%,
+    500% {
+        transform: none;
+    }
+
+    50% {
+        transform: translate(50%, 20%) rotate(-200deg) scale(1.2);
+    }
+}
+
+.blob {
+    height: 200px;
+    width: 200px;
+    border-radius: 30% 50% 20% 40%;
+    animation: transform 20s ease-in-out infinite both alternate, movement_two 40s ease-in-out infinite both;
+    opacity: .7;
+    position: absolute;
+    left: 20%;
+    top: 15%;
+    filter: blur(250px);
+    background: rgba(174, 103, 250, 0.59);
 }
 
 .heading2 {
@@ -53,6 +121,10 @@
     margin-top: 4rem;
 }
 
+.bookBtnMobileView{
+    display: none;
+}
+
 .arrowIcon {
     background: url(../../Assets/icon.svg);
     background-repeat: no-repeat;
@@ -69,23 +141,23 @@
     color: #F9F8F8;
 }
 
-.blockLeft{
+.blockLeft {
     margin: auto;
     font-size: 4rem;
     font-weight: 800;
     text-align: center;
 }
 
-.blockRight{
+.blockRight {
     margin: auto;
 }
 
-.blockRight>ul{
+.blockRight>ul {
     list-style-type: none;
     padding: 2rem 0;
 }
 
-.blockRight>ul>li{
+.blockRight>ul>li {
     display: flex;
     font-size: 1.2rem;
     align-items: center;
@@ -93,7 +165,81 @@
     font-weight: 400;
 }
 
-.listIcon{
+.listIcon {
     margin-right: 2rem;
-    scale: 0.8;
+    scale: 0.9;
+}
+
+@media screen and (max-width: 768px) {
+    .main{
+        overflow-x: auto;
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0;
+    }
+    .contentLeft{
+        /* width: 100vw; */
+        margin: auto;
+        text-align: center;
+        padding: 0;
+    }
+    .contentRight{
+        padding: 0;
+    }
+    .contentRight>img{
+        /* display: none; */
+        padding: 2rem 0;
+        width: 100%;
+        height: auto;
+    }
+    .heading, .heading2{
+        font-size: 1.6rem;
+        font-weight: 800;
+    }
+    .tagLine{
+        /* display: none; */
+        /* margin: 1rem auto; */
+        padding: 1rem auto;
+        max-width: 100%;
+        text-align: center;
+        font-size: 1rem;
+    }
+    .bookBtn{
+        display: none;
+    }
+    .bookBtnMobileView{
+        border-radius: 59px;
+        padding: 4px 10px;
+        /* width: 25rem; */
+        /* height: 3rem; */
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 0.75rem;
+        text-align: center;
+        cursor: pointer;
+        margin: 4rem auto; 
+        align-items: center;
+    }
+    .arrowIcon{
+        margin-left: 1rem;
+    }
+    .centerBlock{
+        /* display: none; */
+        margin: auto 1rem;
+        flex-direction: column;
+    }
+    .blockLeft{
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+    .blockRight>ul>li{
+        font-size: 1rem;
+        padding: 0;
+        /* padding-left: 0.2rem; */
+    }
+    .listIcon{
+        margin-right: 0.5rem;
+        scale: 0.6;
+        margin-left: 0;
+    }
 }

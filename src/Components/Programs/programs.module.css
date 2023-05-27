@@ -1,6 +1,6 @@
 .container {
     margin: auto;
-    padding: 5rem 0;
+    padding-top: 5rem;
     color: #F9F8F8;
     background: #040C18;
 }
@@ -46,10 +46,10 @@
     vertical-align: middle;
 }
 
-.btnCont{
+.btnCont {
     display: flex;
     text-align: center;
-    
+
     margin-right: 35%;
     justify-content: space-between;
 }
@@ -121,8 +121,8 @@
     content: '';
     background: linear-gradient(90deg, #AE67FA 1.84%, #F49867 100%);
     -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
 }
@@ -191,43 +191,175 @@
     padding: 0.5rem 0;
 }
 
-.img{
+.img {
     margin-left: -6rem;
     scale: 0.9;
     margin-bottom: 0;
 }
 
-.gridCont{
+.gridCont {
     display: grid;
     text-align: center;
     grid-template-columns: auto auto auto;
     padding: 4rem;
-    
+
 }
 
-.gridItem{
+.gridItem {
     display: flex;
     padding: 3rem;
     flex-direction: column;
     align-items: center;
 }
 
-.gridItem>span{
+.gridItem>span {
     font-weight: 600;
     font-family: 'Inter', sans-serif;
 }
 
-.gridImg{
+.gridImg {
     height: 108px;
     width: 108px;
     padding-bottom: 1rem;
     /* scale: 0.2; */
 }
 
-.whyBlock{
+.whyBlock {
     padding-top: 4rem;
     border-radius: 20px;
     margin: 10rem 8rem 5rem 8rem;
     /* width: 80vw; */
     background: #5C6FFB1A;
+}
+
+@keyframes transform {
+
+    0%,
+    100% {
+        border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%;
+    }
+
+    20% {
+        border-radius: 37% 63% 51% 49% / 37% 65% 35% 63%;
+    }
+
+    40% {
+        border-radius: 36% 64% 64% 36% / 64% 48% 52% 36%;
+    }
+
+    60% {
+        border-radius: 37% 63% 51% 49% / 30% 30% 70% 70%;
+    }
+
+    80% {
+        border-radius: 40% 60% 42% 58% / 41% 51% 49% 59%;
+    }
+}
+
+
+@keyframes movement_one {
+
+    0%,
+    100% {
+        transform: none;
+    }
+
+    50% {
+        transform: translate(50%, 20%) rotateY(10deg) scale(1.2);
+    }
+}
+
+@keyframes movement_two {
+
+    0%,
+    500% {
+        transform: none;
+    }
+
+    50% {
+        transform: translate(50%, 20%) rotate(-200deg) scale(1.2);
+    }
+}
+
+.blob {
+    height: 200px;
+    width: 200px;
+    border-radius: 30% 50% 20% 40%;
+    animation: transform 20s ease-in-out infinite both alternate, movement_one 40s ease-in-out infinite both;
+    /* opacity: .7; */
+    position: absolute;
+    right: 85%;
+    /* top: 10%; */
+    filter: blur(190px);
+    background: rgba(174, 103, 250, 0.59);
+}
+
+/* Mobile view CSS */
+
+@media screen and (max-width: 768px) {
+    *{
+        max-width: 100%;
+    }
+    .title {
+        font-size: 2rem;
+    }
+
+    .topBlock {
+        display: flex;
+        margin: 1rem auto;
+        flex-direction: column;
+        padding-bottom: 2.5rem;
+    }
+    .topBlock::after{
+        margin: auto 1rem;
+    }
+
+    .head {
+        display: flex;
+        margin: 1rem auto;
+        padding: 0;
+        flex-direction: column;
+        font-size: 1.5rem;
+    }
+    .btnCont{
+        display: flex;
+        margin: 1rem auto;
+        flex-direction: column;
+    }
+    .duration, .sessions{
+        margin: 1rem auto;
+        display: flex;
+    }
+    .columns{
+        display: flex;
+        flex-direction: column !important;
+    }
+    .curriculum, .learning{
+        margin: auto;
+        margin: 1rem 1.2rem;
+        padding: 1rem;
+    }
+    /* .topBlock::after, */
+    .img{
+        display: none;
+    }
+    .whyBlock{
+        display: flex;
+        flex-direction: column;
+        margin: auto 1rem;
+    }
+    .gridCont{
+        padding: 0;
+        grid-template-columns: auto auto;
+    }
+    .gridItem{
+        padding: 0;
+        font-size: 10px;
+        padding: 1rem;
+    }
+    .gridImg{
+        width: 40%;
+        height: auto;
+        /* padding: 0; */
+    }
 }

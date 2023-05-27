@@ -97,9 +97,17 @@
     text-decoration: overline;
 }
 
-.gridDesc {
+.gridDesc{
     font-weight: 500;
     font-size: 1rem;
+}
+
+.gridDesc2 {
+    font-weight: 400;
+    font-size: 1.4rem;
+    width: 70%;
+    margin: auto;
+    text-align: center;
 }
 
 .head2 {
@@ -134,18 +142,24 @@
 
 .gridImage {
     padding-top: 0.6rem;
+    /* display: flex; */
+    align-items: center;
+}
+#trendImg{
+    margin-top: 1rem;
+    margin-bottom: 0.6rem;
 }
 
 .whySkLabs {
     margin-bottom: 4rem;
 }
 
-.contact{
+.contact {
     display: flex;
     flex-direction: column;
-    background: #5C6FFB1A;
+    background: rgba(3, 27, 52, 0.28);
     padding: 4rem 0;
-    margin: 3rem 0 10rem 0;
+    margin: 3rem 0 0 0;
 }
 
 .contactHead {
@@ -157,13 +171,182 @@
     letter-spacing: 0.045em;
 }
 
-.contactBtn{
+.contactBtn {
     margin: auto;
     background: #F9F8F8;
     border-radius: 8px;
     color: #000631;
-    padding: 5px 36px;
-    font-size: 1.2rem;
+    padding: 10px 44px;
+    font-size: 1.4rem;
     font-weight: 600;
+    display: flex;
     cursor: pointer;
+}
+
+#highlightedText{
+    font-weight: 600;
+    width: 100%;
+}
+
+@keyframes transform {
+
+    0%,
+    100% {
+        border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%;
+    }
+
+    20% {
+        border-radius: 37% 63% 51% 49% / 37% 65% 35% 63%;
+    }
+
+    40% {
+        border-radius: 36% 64% 64% 36% / 64% 48% 52% 36%;
+    }
+
+    60% {
+        border-radius: 37% 63% 51% 49% / 30% 30% 70% 70%;
+    }
+
+    80% {
+        border-radius: 40% 60% 42% 58% / 41% 51% 49% 59%;
+    }
+}
+
+
+@keyframes movement_one {
+
+    0%,
+    100% {
+        transform: none;
+    }
+
+    50% {
+        transform: translate(50%, 20%) rotateY(10deg) scale(1.2);
+    }
+}
+
+@keyframes movement_two {
+
+    0%,
+    500% {
+        transform: none;
+    }
+
+    50% {
+        transform: translate(50%, 20%) rotate(-200deg) scale(1.2);
+    }
+}
+
+.blob {
+    height: 200px;
+    width: 200px;
+    border-radius: 30% 50% 20% 40%;
+    transform: rotate(-180deg);
+    animation: transform 20s ease-in-out infinite both alternate, movement_two 40s ease-in-out infinite both;
+    opacity: .7;
+    position: absolute;
+    left: 23%;
+    /* top: 450%; */
+    filter: blur(200px);
+    background: rgba(174, 103, 250, 0.59);
+}
+
+/* Mobile View CSS */
+
+@media screen and (max-width:768px) {
+    .aboutCont {
+        margin: 5rem 1rem;
+        margin-bottom: 0;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        font-size: 2rem;
+    }
+
+    .head {
+        margin-left: 10px;
+        text-align: left;
+    }
+
+    .desc {
+        display: flex;
+        padding: 1rem;
+        width: 90%;
+    }
+
+    .midBlock {
+        margin: auto;
+    }
+
+    .heading {
+        margin: auto;
+        font-size: 2rem;
+        padding: 0.1rem 1rem 1rem;
+    }
+
+    #brk {
+        display: none;
+    }
+
+    .gridCont {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .gridHead {
+        display: flex;
+        font-size: 0.8rem;
+    }
+
+    .gridItm {
+        display: flex;
+        padding: 0.5rem 0 0.5rem 0.5rem;
+        background: rgba(92, 111, 251, 0.1);
+        margin-bottom: 1rem;
+        border-radius: 5px;
+    }
+
+    .gridDesc, 
+    .gridDesc2 {
+        font-size: 0.75rem;
+        width: 100%;
+    }
+
+    .whySkLabs {
+        display: flex;
+        margin: 4rem auto;
+        flex-direction: column;
+    }
+    .head2 {
+        margin: auto;
+        font-size: 2rem;
+        display: flex;
+    }
+    .gridContainer{
+        padding: 0.6rem;
+    }
+    .gridItem{
+        padding: 0;
+    }
+    .gridImage{
+        padding: 0;
+    }
+    .gridImage>img{
+        width: 40%;
+        height: auto;
+    }
+    .contact{
+        margin-bottom: 0;
+        background: #5C6FFB1A;
+    }
+    .contactHead{
+        font-size: 1rem;
+    }
+    .contactBtn{
+        font-size: 0.8rem;
+    }
 }
