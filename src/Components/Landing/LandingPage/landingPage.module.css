@@ -126,7 +126,7 @@
 }
 
 .arrowIcon {
-    background: url(../../Assets/icon.svg);
+    background: url(../../../Assets/icon.svg);
     background-repeat: no-repeat;
     display: block;
     height: 23px;

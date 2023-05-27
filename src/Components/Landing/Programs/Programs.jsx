@@ -1,12 +1,12 @@
 import React from "react";
 import style from "./programs.module.css";
-import img from "../../Assets/Screenshot.png";
-import curiosityIcon from "../../Assets/faculty-curiosityIcon.svg";
-import ideaIcon from "../../Assets/ideaIcon.svg";
-import moneyIcon from "../../Assets/moneyIcon.svg";
-import noteIcon from "../../Assets/noteIcon.svg";
-import timeIcon from "../../Assets/timeIcon.svg";
-import careerIcon from "../../Assets/careerIcon.svg";
+import img from "../../../Assets/Screenshot.png";
+import curiosityIcon from "../../../Assets/faculty-curiosityIcon.svg";
+import ideaIcon from "../../../Assets/ideaIcon.svg";
+import moneyIcon from "../../../Assets/moneyIcon.svg";
+import noteIcon from "../../../Assets/noteIcon.svg";
+import timeIcon from "../../../Assets/timeIcon.svg";
+import careerIcon from "../../../Assets/careerIcon.svg";
 import { Outlet } from "react-router-dom";
 import About from "../About/About";
 

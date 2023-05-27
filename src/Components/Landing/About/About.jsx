@@ -1,10 +1,10 @@
 import React from "react";
 import style from "./about.module.css";
-import idea from "../../Assets/idea.svg";
-import affordable from "../../Assets/affordable.svg";
-import trend from "../../Assets/trend.svg";
-import game from "../../Assets/game.svg";
-import note from "../../Assets/note.svg";
+import idea from "../../../Assets/idea.svg";
+import affordable from "../../../Assets/affordable.svg";
+import trend from "../../../Assets/trend.svg";
+import game from "../../../Assets/game.svg";
+import note from "../../../Assets/note.svg";
 import { Outlet } from "react-router-dom";
 import Footer from "../Footer/Footer";
 
