@@ -32,3 +32,9 @@
     color: #280003;    ;
     cursor: pointer;
 }
+
+@media screen and (max-width: 1050px) {
+    .menu{
+        display: none;
+    }
+}
