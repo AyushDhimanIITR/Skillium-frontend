@@ -32,6 +32,9 @@
     color: #280003;    ;
     cursor: pointer;
 }
+.hideLoginBtn{
+    display: none;
+}
 
 @media screen and (max-width: 1050px) {
     .menu{

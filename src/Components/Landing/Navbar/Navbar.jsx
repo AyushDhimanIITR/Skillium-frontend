@@ -1,9 +1,11 @@
 import React from "react";
-import Logo from "../../Assets/logo.svg";
+import Logo from "../../../Assets/logo.svg";
 import style from "./navbar.module.css";
 import { Outlet, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const path = window.location.pathname;
+  console.log(path);
   const navigate = useNavigate();
   return (
     <>
@@ -16,7 +18,8 @@ const Navbar = () => {
         <a href="#">Home</a>
         <a href="#programs">Programs</a>
         <a href="#contact">About Us</a>
-        <button onClick={() => navigate("/login")}>Sign In</button>
+        {/* <button className={style.hideLoginBtn} onClick={() => navigate("/login")}>Sign In</button> */}
+        <button className={`${path==="/login" ? `${style.hideLoginBtn}`: ""}`} onClick={() => navigate("/login")}>Sign In</button>
       </div>
     </div>
       <Outlet />
