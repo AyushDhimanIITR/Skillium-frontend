@@ -1,0 +1,276 @@
+.header {
+    display: flex;
+    /* background: rgba(92, 111, 251, 1); */
+    background: #031B34;
+    justify-content: space-between;
+    color: #FFFFFF;
+    z-index: 1;
+}
+
+.logo {
+    cursor: pointer;
+    padding: 1rem 1rem;
+    display: flex;
+    align-items: center;
+    color: #F9F8F8;
+    font-size: 1.5rem;
+}
+
+.logo>a {
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.5rem;
+    color: #F9F8F8;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.menu>a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    color: #F9F8F8;
+}
+
+.menu>button {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    padding: 8px 40px;
+    font-weight: 500;
+    border-radius: 35px;
+    border: none;
+    color: #280003;
+    cursor: pointer;
+}
+
+.sidebar {
+    height: 100%;
+    width: 4rem;
+    position: fixed;
+    /* background: rgba(92, 111, 251, 1); */
+    box-shadow: 4px 0px 11px rgba(0, 0, 0, 0.15);
+    background: #031B34;
+}
+
+.itemCont {
+    margin: 5rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.logout {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10rem;
+}
+
+.sidebarBtn {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    appearance: none;
+    padding: 1.2rem 0;
+    transition: transform 0.7s ease-in-out;
+}
+
+.sidebarBtn:hover {
+    transform: rotate(360deg);
+}
+
+.content {
+    background: #141414;
+    margin-left: 4rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile {
+    display: flex;
+    width: calc(100% - 4rem);
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+}
+
+.profile::after {
+    position: absolute;
+    content: "";
+    background: #A9AAAB;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    bottom: 00%;
+    width: calc(100%);
+    height: 2px;
+    margin-left: 1.8rem;
+    text-decoration: underline;
+}
+
+.profile>p {
+    padding-left: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.profile>img {
+    height: 60px;
+    width: 60px;
+}
+
+.nameCont {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    flex-direction: column;
+}
+
+.name {
+    margin-top: 2rem;
+    font-size: 2rem;
+    width: calc(100vw - 7.5rem);
+    padding: 1rem 0rem 5rem 0;
+    text-align: center;
+    background: #5C6FFB1A;
+    font-weight: 600;
+}
+
+.profileImg {
+    margin-top: -6%;
+}
+
+hr.border {
+    display: flex;
+    height: 4rem;
+    border: 1px solid #fff;
+    margin-left: 25%;
+}
+
+.scoreCard {
+    width: 15%;
+    margin: 2rem auto;
+    justify-content: space-around;
+    text-align: center;
+    display: flex;
+}
+
+.rank,
+.diamonds {
+    font-size: 1.6rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, #AE67FA 1.84%, #F49867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.border {
+    margin: auto 2rem;
+}
+
+.profileCard {
+    background: #5C6FFB1A;
+    align-items: center;
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 25%;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
+.profileCard p {
+    font-size: 1.5rem;
+}
+
+.editBtn {
+    display: flex;
+    align-items: center;
+    background: inherit;
+    border: 1.5px solid #F9F8F8;
+    color: #F9F8F8;
+    font-size: 1rem;
+    border-radius: 6px;
+    padding: 10px 20px;
+    margin-bottom: 3rem;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.navmenu {
+    display: none;
+}
+
+
+@media screen and (max-width: 1050px) {
+    .menu {
+        display: none;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .name {
+        width: calc(100vw - 5rem);
+        font-size: 1.5rem;
+    }
+
+    .profile>p {
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    .profile>img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .profileImg {
+        margin-top: -20%;
+        height: auto;
+        width: 40%;
+    }
+
+    hr.border {
+        margin-left: 90%;
+    }
+
+    .profileCard {
+        width: 70%;
+    }
+
+    .profileCard p {
+        font-size: 1.2rem;
+    }
+
+    .editBtn {
+        width: 80%;
+    }
+
+    .navmenu {
+        display: contents;
+    }
+
+    .itemCont {
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 0;
+        background: rgba(92, 111, 251, 0.1);
+        border-top: 2px solid #25283D;
+        box-shadow: 0px -8px 20px rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+    }
+
+    .sidebarBtn {
+        padding: 0;
+        background: none;
+    }
+
+}
