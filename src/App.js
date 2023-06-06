@@ -4,6 +4,8 @@ import LandingPage from "./Components/Landing/LandingPage/LandingPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./Components/Login/Login";
 import Dashboard from "./Components/Dashboard/Dashboard";
+import Level from "./Components/Dashboard/Levels/Level";
+import Leaderoard from "./Components/Dashboard/Leaderboard/Leaderboard";
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<Login />} />
           </Route>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/profile" element={<Dashboard />} />
+            <Route path="/levels" element={<Level />} />
+            <Route path="/leaderboard" element={<Leaderoard />} />
         </Routes>
       </BrowserRouter>
     </div>

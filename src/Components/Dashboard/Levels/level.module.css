@@ -139,7 +139,7 @@
 }
 
 .profileImg {
-    margin-top: -2%;
+    margin-top: -6%;
 }
 
 hr.border {
@@ -204,6 +204,43 @@ hr.border {
     display: none;
 }
 
+.gridContainer {
+    margin: 2rem 4rem;
+    margin-bottom: 5rem;
+    display: grid;
+    row-gap: 1.2rem;
+    grid-template-columns: 25% 35% 20% 20%;
+}
+
+.gridHead {
+    font-size: 1.3rem;
+    font-weight: 500;
+    background: #0D162F;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    padding: 1rem 0.8rem;
+}
+
+.gridItem {
+    padding: 0.8rem 1rem;
+    background: #fff;
+    color: #4E4D4D;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.pcOnly{
+    display: none;
+}
+
+.game{
+    display: flex;
+    margin: auto;
+}
 
 @media screen and (max-width: 1050px) {
     .menu {
@@ -239,39 +276,64 @@ hr.border {
         width: 40%;
     }
 
-    hr.border {
-        margin-left: 90%;
-    }
-
-    .profileCard {
-        width: 70%;
-    }
-
-    .profileCard p {
-        font-size: 1.2rem;
-    }
-
-    .editBtn {
-        width: 80%;
-    }
-
     .navmenu {
         display: contents;
-    }
-
-    .itemCont {
-        flex-direction: row;
-        justify-content: space-around;
-        margin: 0;
         background: rgba(92, 111, 251, 0.1);
         border-top: 2px solid #25283D;
         box-shadow: 0px -8px 20px rgba(0, 0, 0, 0.15);
         border-radius: 4px;
     }
 
+    .itemCont {
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 0;
+        /* background: rgba(92, 111, 251, 01); */
+        background: #031B34;
+        border-top: 2px solid #25283D;
+        box-shadow: 0px -8px 20px rgba(0, 0, 0, 0.15);
+        /* border-radius: 4px; */
+    }
+
     .sidebarBtn {
         padding: 0;
         background: none;
+    }
+
+    .gridContainer {
+        display: none;
+    }
+
+    .pcOnly{
+        display: contents;
+    }
+    
+    .pcOnlyCard{
+        margin: 50% 2rem;
+        display: flex;
+        align-items: center;
+        background: #FFF;
+        padding: 1rem 2rem;
+        flex-direction: column;
+    }
+
+    .pcOnlyCard>img{
+        border: 10px solid #031B34;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background: #031B34;
+    }
+    .pcOnlyCard>p{
+        color: #0A0B0F;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    .pcOnlyCard>button{
+        background: #0D162F;
+        color: #fff;
+        border-radius: 4px;
+        padding: 12px 24px;
     }
 
 }
