@@ -4,6 +4,7 @@ import Logo from "../../../Assets/logo.svg";
 import fb from "../../../Assets/fb.svg";
 import insta from "../../../Assets/insta.svg";
 import linkedin from "../../../Assets/linkedin.svg";
+import {FacebookFilled, LinkedinFilled, InstagramFilled} from '@ant-design/icons';
 
 const Footer = () => {
     return(
@@ -16,9 +17,12 @@ const Footer = () => {
             <div className={styles.gridItm}>
                 <div id={styles.link} className={styles.gridHead}>Links</div>
                 <div className={styles.socials}>
-                    <a href="/"><img className={styles.fb} src={fb} alt="" /> </a> 
-                    <a href="/"><img src={linkedin} alt="" /> </a> 
-                    <a href="/"><img src={insta} alt="" /> </a> 
+                <a href='/'><FacebookFilled style={{color:'#fff', fontSize:'36px'}} /> </a>
+                <a href='/'><LinkedinFilled style={{color:'#fff', fontSize:'36px'}} /> </a>
+                <a href='/'><InstagramFilled style={{color:'#fff', fontSize:'36px'}} /> </a>
+                    {/* <a href="/"><img className={styles.fb} src={fb} alt="" /> </a>  */}
+                    {/* <a href="/"><img src={linkedin} alt="" /> </a>  */}
+                    {/* <a href="/"><img src={insta} alt="" /> </a>  */}
                 </div>
             </div>
             <div className={styles.gridItm}>
