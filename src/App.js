@@ -1,16 +1,19 @@
-import React from "react";
-import Navbar from "./Components/Landing/Navbar/Navbar";
-import LandingPage from "./Components/Landing/LandingPage/LandingPage";
+import React, {Suspense, lazy} from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "./Components/Login/Login";
-import Dashboard from "./Components/Dashboard/Dashboard";
-import Level from "./Components/Dashboard/Levels/Level";
-import Leaderoard from "./Components/Dashboard/Leaderboard/Leaderboard";
+import Loader from "./Components/Loader";
+const Navbar = lazy(() => import('./Components/Landing/Navbar/Navbar'));
+const LandingPage = lazy(() => import("./Components/Landing/LandingPage/LandingPage"));
+const Login = lazy(() => import('./Components/Login/Login'));
+const Dashboard = lazy(() => import('./Components/Dashboard/Dashboard'));
+const Leaderoard = lazy(() => import('./Components/Dashboard/Leaderboard/Leaderboard'));
+const Level = lazy(() => import('./Components/Dashboard/Levels/Level'));
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <Suspense fallback={<Loader />} >
+
         <Routes>
           <Route path="/" element={<Navbar />} >
             <Route path="/" element={<LandingPage />} />
@@ -20,6 +23,7 @@ function App() {
             <Route path="/levels" element={<Level />} />
             <Route path="/leaderboard" element={<Leaderoard />} />
         </Routes>
+      </Suspense>
       </BrowserRouter>
     </div>
   );

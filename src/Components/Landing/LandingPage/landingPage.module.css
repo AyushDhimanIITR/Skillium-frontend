@@ -20,6 +20,10 @@
     padding-top: 6rem;
 }
 
+.contentRight>img{
+    width: 90%;
+}
+
 .heading,
 .heading2 {
     font-size: 4rem;
