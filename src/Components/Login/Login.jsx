@@ -69,7 +69,7 @@ const Login = () => {
             </Form>
           </div>
           <div className={style.illustration}>
-            <img src={illustration} alt="" />
+            <img loading="lazy" src={illustration} alt="" />
           </div>
         </div>
       </div>
