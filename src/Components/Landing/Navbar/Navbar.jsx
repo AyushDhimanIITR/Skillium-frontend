@@ -11,7 +11,7 @@ const Navbar = () => {
     <>
     <div className={style.mainCont}>
       <div className={style.logo}>
-        <a href="/"><img src={Logo} alt="" /></a>
+        <a href="/" aria-label="Return to homepage"><img src={Logo} alt="" /></a>
       </div>
       <div className={style.menu}>
        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
