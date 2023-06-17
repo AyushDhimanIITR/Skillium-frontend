@@ -23,10 +23,13 @@ const LandingPage = () => {
               Highly interactive and personalized sessions on financial literacy
               for students.
             </p>
+
+            <a href="https://forms.gle/PE57e8LDndV7VpGMA" target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}>
             <button className={style.bookBtn}>
               Book A Free Demo For Your School
               <span className={style.arrowIcon}></span>
             </button>
+            </a>
           </div>
           <div className={style.contentRight}>
             <img loading="lazy" src={illustration} alt="" />
