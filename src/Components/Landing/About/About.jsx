@@ -26,7 +26,7 @@ const About = () => {
         </div>
         <div className={style.midBlock}>
           <div className={style.heading}>
-            Innovative learning for a <br id={style.brk}/> smarter tomorrow
+            Innovative learning for a <br id={style.brk} /> smarter tomorrow
           </div>
           <div className={style.gridCont}>
             <div className={style.gridItm}>
@@ -36,7 +36,7 @@ const About = () => {
                 competencies essential for the overall development of a student.
               </div>
             </div>
-<div className={style.blob} />
+            <div className={style.blob} />
             <div className={style.gridItm}>
               <div className={style.gridHead}>Knowledgebase</div>
               <div className={style.gridDesc}>
@@ -70,7 +70,9 @@ const About = () => {
               <div className={style.gridImage}>
                 <img src={affordable} alt="" />{" "}
               </div>
-              <div className={style.gridDesc2} id={style.highlightedText}>Affordable per student</div>
+              <div className={style.gridDesc2} id={style.highlightedText}>
+                Affordable per student
+              </div>
             </div>
             <div className={style.gridItem}>
               <div className={style.gridImage}>
@@ -98,7 +100,15 @@ const About = () => {
         </div>
         <div className={style.contact}>
           <div className={style.contactHead}>Still have any doubts?</div>
-          <button className={style.contactBtn}>Contact Us</button>
+          <a
+            href="https://forms.gle/PE57e8LDndV7VpGMA"
+            aria-label="Book a free demo"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <button className={style.contactBtn}>Contact Us</button>
+          </a>
         </div>
         <Footer />
       </div>
