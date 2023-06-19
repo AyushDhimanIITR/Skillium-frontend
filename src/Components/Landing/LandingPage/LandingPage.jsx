@@ -24,20 +24,34 @@ const LandingPage = () => {
               for students.
             </p>
 
-            <a href="https://forms.gle/PE57e8LDndV7VpGMA" aria-label="Book a free demo" target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}>
-            <button className={style.bookBtn}>
-              Book A Free Demo For Your School
-              <span className={style.arrowIcon}></span>
-            </button>
+            <a
+              href="https://forms.gle/PE57e8LDndV7VpGMA"
+              aria-label="Book a free demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none" }}
+            >
+              <button className={style.bookBtn}>
+                Book A Free Demo For Your School
+                <span className={style.arrowIcon}></span>
+              </button>
             </a>
           </div>
           <div className={style.contentRight}>
             <img loading="lazy" src={illustration} alt="" />
           </div>
-          <button className={style.bookBtnMobileView}>
-            Book A Free Demo For Your School{" "}
-            <span className={style.arrowIcon}></span>
-          </button>
+          <a
+            href="https://forms.gle/PE57e8LDndV7VpGMA"
+            aria-label="Book a free demo"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "none" }}
+          >
+            <button className={style.bookBtnMobileView}>
+              Book A Free Demo For Your School{" "}
+              <span className={style.arrowIcon}></span>
+            </button>
+          </a>
         </div>
         <div className={style.centerBlock}>
           <div className={style.blob} />
