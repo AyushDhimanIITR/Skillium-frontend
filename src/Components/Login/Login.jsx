@@ -2,15 +2,47 @@ import React from "react";
 import style from "./login.module.css";
 import illustration from "../../Assets/loginIllust.png";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Form, Input, notification, Space } from "antd";
+import { API_DOMAIN } from "../../js/config";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const onFinish = (values) => {
-    console.log("Received values of form: ", values);
+  const [apis, contextHolder] = notification.useNotification();
+  const navigate = useNavigate();
+
+  const errorNotification = (type) => {
+    apis[type]({
+      message: "Login failed",
+      description: "You have entered incorrect credentials",
+    });
+  };
+
+  const onFinish = async (values) => {
+    try {
+      const { email, password } = values;
+      const data = await fetch(`${API_DOMAIN}students/authenticate`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: email,
+          password: password,
+        }),
+      });
+      const response = await data.json();
+      console.log(response);
+      navigate("/profile");
+    } catch (error) {
+      errorNotification("error");
+      console.log(error);
+    }
   };
   return (
     <>
       <div className={style.loginCont}>
+        {contextHolder}
         <div className={style.box}>
           <div className={style.form}>
             <p>Sign in to your account</p>
@@ -21,14 +53,14 @@ const Login = () => {
               onFinish={onFinish}
             >
               <Form.Item
-
                 name="email"
                 rules={[
-                  {type:"email", required: true, message: "Please input your Email!" },
+                  { required: true, message: "Please input your Email!" },
                 ]}
                 hasFeedback
               >
-                <Input style={{padding:"0.5rem "}}
+                <Input
+                  style={{ padding: "0.5rem " }}
                   prefix={<UserOutlined className="site-form-item-icon" />}
                   placeholder="Email"
                 />
@@ -43,14 +75,18 @@ const Login = () => {
                   prefix={<LockOutlined className="site-form-item-icon" />}
                   type="password"
                   placeholder="Password"
-                  style={{padding:"0.5rem "}}
+                  style={{ padding: "0.5rem " }}
                 />
               </Form.Item>
               <Form.Item>
                 {/* <Form.Item name="remember" valuePropName="checked" noStyle>
                   <Checkbox>Remember me</Checkbox>
                 </Form.Item> */}
-                <a style={{color: "#525252"}} className="login-form-forgot" href="">
+                <a
+                  style={{ color: "#525252" }}
+                  className="login-form-forgot"
+                  href=""
+                >
                   Forgot password
                 </a>
               </Form.Item>
@@ -60,10 +96,10 @@ const Login = () => {
                   type="primary"
                   htmlType="submit"
                   className="login-form-button loginBtn"
-                  style={{background:'#343434', padding:"auto 1rem"}}
+                  style={{ background: "#343434", padding: "auto 1rem" }}
                 >
                   Sign in
-                </Button> 
+                </Button>
                 {/* Or <a href="">register now!</a> */}
               </Form.Item>
             </Form>

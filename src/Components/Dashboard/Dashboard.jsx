@@ -13,7 +13,7 @@ import ProfilePicChanger from "./Levels/profilePicChanger";
 
 const Dashboard = () => {
   const path = window.location.pathname.slice(1);
-  console.log(path);
+  // console.log(path);
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <div className={style.header}>
