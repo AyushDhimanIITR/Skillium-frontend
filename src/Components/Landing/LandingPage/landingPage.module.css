@@ -176,7 +176,7 @@
 
 @media screen and (max-width: 768px) {
     .main{
-        overflow-x: auto;
+        /* overflow-x: auto; */
         display: flex;
         flex-direction: column;
         margin: 1rem 0;
@@ -186,23 +186,24 @@
         margin: auto;
         text-align: center;
         padding: 0;
+        width: 80%;
     }
     .contentRight{
         padding: 0;
     }
     .contentRight>img{
         /* display: none; */
-        padding: 2rem 0;
+        padding: 0rem 0;
         width: 100%;
         height: auto;
     }
     .heading, .heading2{
-        font-size: 1.6rem;
+        font-size: 32px;
         font-weight: 800;
     }
     .tagLine{
         /* display: none; */
-        /* margin: 1rem auto; */
+        margin: 1.5rem auto;
         padding: 1rem auto;
         max-width: 100%;
         text-align: center;
@@ -223,6 +224,7 @@
         cursor: pointer;
         margin: 4rem auto; 
         align-items: center;
+        border: none;
     }
     .arrowIcon{
         margin-left: 1rem;

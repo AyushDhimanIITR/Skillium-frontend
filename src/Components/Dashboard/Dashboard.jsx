@@ -9,7 +9,6 @@ import dp from "../../Assets/profilePic.png";
 import edit from "../../Assets/edit.svg";
 import Level from "./Levels/Level";
 import {NavLink} from "react-router-dom";
-import { Avatar } from "antd";
 import ProfilePicChanger from "./Levels/profilePicChanger";
 
 const Dashboard = () => {
