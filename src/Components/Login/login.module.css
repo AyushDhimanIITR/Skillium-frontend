@@ -23,14 +23,43 @@
 }
 
 #components-form-demo-normal-login .login-form {
-    max-width: 300px;
-  }
-  #components-form-demo-normal-login .login-form-forgot {
-    float: right;
-  }
-  #components-form-demo-normal-login .ant-col-rtl .login-form-forgot {
-    float: left;
-  }
-  #components-form-demo-normal-login .login-form-button {
-    width: 100%;
+  max-width: 300px;
+}
+#components-form-demo-normal-login .login-form-forgot {
+  float: right;
+}
+#components-form-demo-normal-login .ant-col-rtl .login-form-forgot {
+  float: left;
+}
+#components-form-demo-normal-login .login-form-button {
+  width: 100%;
+}
+
+@media screen and (max-width:1050px) {
+    .loginCont{
+        background: #040C18;
+        padding: 2rem 0.5rem;
+        /* height: 100vh; */
+    }
+    .box{
+        background: #fff;
+        padding: 2rem 3rem ;
+        display: flex;
+        margin: auto;
+        justify-content: space-around;
+    }
+    .form>p{
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #171717;
+    }
+    
+    .btnCont{
+        display: flex;
+        flex-direction: column;
+        padding: auto;
+    }
+    .illustration{
+      display: none;
+    }
   }

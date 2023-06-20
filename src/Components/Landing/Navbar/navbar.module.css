@@ -10,6 +10,10 @@
     padding: 1rem 2rem;
 }
 
+.logoMobileView{
+    display: none;
+}
+
 .menu{
     display: flex;
     align-items: center;
@@ -32,6 +36,9 @@
     color: #280003;    ;
     cursor: pointer;
 }
+.menuMobileView{
+    display: none;
+}
 .hideLoginBtn{
     display: none;
 }
@@ -39,5 +46,28 @@
 @media screen and (max-width: 1050px) {
     .menu{
         display: none;
+    }
+    .Icon{
+        display: none;
+    }
+    .logoMobileView{
+        display: flex;
+    }
+    .menuMobileView{
+        align-items: center;
+        width: 30vw;
+        justify-content: space-around;
+        display: flex;
+        
+    }
+    .menuMobileView>button{
+        font-family: 'Manrope', sans-serif;  
+        font-size: 12px;
+        padding: 3px 16px;
+        font-weight: 500;
+        border-radius: 18px;
+        border: none;
+        color: #280003;    ;
+        cursor: pointer;
     }
 }
