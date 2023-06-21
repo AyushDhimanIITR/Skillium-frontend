@@ -4,7 +4,7 @@ import { Avatar, Button, Modal } from "antd";
 import dp from "../../../Assets/profilePic.png";
 import { UserOutlined } from '@ant-design/icons';
 
-const ProfilePicChanger = () => {
+const ProfilePicChanger = (props) => {
 
     const [profileImage, setProfileImage] = useState("");
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,11 +22,18 @@ const ProfilePicChanger = () => {
         console.log(e.target.files);
         setProfileImage(e.target.files[0])
     }
+    // console.log(props.data);
 
     return (
-        <>
+        <>  
+        {/* { props.map(props => {
+            return(
+                
+            )
+        })} */}
             <div className={style.name}>
-                <p>Moksh Singhal</p>
+                <p>{props.data.name}</p>
+                <p> {props.data.id} </p>
             </div>
             <Avatar className={style.profileImg} size={128} icon={<UserOutlined />} />
             <Button type="primary" style={{color:'#fff', backgroundColor:'transparent', border:'1px solid'}} onClick={showModal}>

@@ -2,12 +2,14 @@ import React from "react";
 import style from "./login.module.css";
 import illustration from "../../Assets/loginIllust.png";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Form, Input, notification, Space } from "antd";
+import { Button, Form, Input, notification } from "antd";
 import { API_DOMAIN } from "../../js/config";
 import { useNavigate } from "react-router-dom";
+import {useCookies } from "react-cookie";
 
 const Login = () => {
   const [apis, contextHolder] = notification.useNotification();
+  const [, setCookie] = useCookies();
   const navigate = useNavigate();
 
   const errorNotification = (type) => {
@@ -32,6 +34,8 @@ const Login = () => {
         }),
       });
       const response = await data.json();
+      setCookie("token", response.jwtToken);
+      // localStorage.setItem('token', response.jwtToken);
       console.log(response);
       navigate("/profile");
     } catch (error) {
@@ -85,7 +89,7 @@ const Login = () => {
                 <a
                   style={{ color: "#525252" }}
                   className="login-form-forgot"
-                  href=""
+                  href="/"
                 >
                   Forgot password
                 </a>

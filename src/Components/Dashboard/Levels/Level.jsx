@@ -9,10 +9,18 @@ import logout from "../../../Assets/logout.svg";
 import { NavLink, useNavigate } from "react-router-dom";
 import gameBg from "../../../Assets/Rectangle67.png";
 import pcOnly from "../../../Assets/pcOnly.svg";
+import {useCookies} from "react-cookie";
 
 const Level = () => {
   const path = window.location.pathname.slice(1);
   console.log(path);
+
+  const [, removeCookie] = useCookies();
+
+  const logoutBtn = () => {
+    removeCookie("token");
+    navigate("/login");
+  };
 
   const navigate = useNavigate();
   return (
@@ -63,7 +71,7 @@ const Level = () => {
           </button>
         </div>
         <div className={style.logout}>
-          <button className={style.sidebarBtn}>
+          <button className={style.sidebarBtn} onClick={logoutBtn}>
             <img src={logout} alt="student-dashboard-logout-btn" />
           </button>
         </div>
@@ -71,17 +79,29 @@ const Level = () => {
       <div className={style.content}>
         <div className={style.profile}>
           <p>{path}</p>
-          <img className={style.dp} alt="profile picture" src={dp} />
+          <img className={style.dp} alt="profile pic" src={dp} />
         </div>
-        {/* <div className={style.gridContainer}>
+        <div className={style.gridContainer}>
           <div className={style.gridHead}>Level</div>
           <div className={style.gridHead}>Title</div>
           <div className={style.gridHead}>Diamonds</div>
           <div className={style.gridHead}>Score</div>
-          <div className={style.gridItem}>
-            <img src={gameBg} alt="game-thumbnail" />
-          </div>
-          <div className={style.gridItem}>The Art of Budgeting</div>
+          <a
+            style={{ zIndex: 10, cursor: "pointer" }}
+            target="_blank"
+            href="https://play.unity.com/webgl/7e334cf1-4d0c-4dd5-a5b1-dd6046e76b22?screenshot=false&embedType=embed"
+            rel="noopener noreferrer" aria-label="Click here to open game"
+          >
+            <div className={style.gridItem}>
+              <img src={gameBg} alt="game-thumbnail" />
+            </div>
+          </a>
+          <div className={style.gridItem}><a
+            style={{ zIndex: 10, cursor: "pointer" }}
+            target="_blank"
+            href="https://play.unity.com/webgl/7e334cf1-4d0c-4dd5-a5b1-dd6046e76b22?screenshot=false&embedType=embed"
+            rel="noopener noreferrer" aria-label="Click here to open game"
+          >The Art of Budgeting </a></div>
           <div className={style.gridItem}>45</div>
           <div className={style.gridItem}>45</div>
           <div className={style.gridItem}>
@@ -102,9 +122,9 @@ const Level = () => {
           <div className={style.gridItem}>Level 4</div>
           <div className={style.gridItem}>45</div>
           <div className={style.gridItem}>45</div>
-        </div> */}
+        </div>
         <div className={style.game}>
-          <iframe
+          {/* <iframe
             id="webgl_iframe"
             frameborder="0"
             allow="autoplay; fullscreen; vr"
@@ -116,7 +136,7 @@ const Level = () => {
             height="960"
             onmousewheel=""
             webkitallowfullscreen="true"
-          ></iframe>
+          ></iframe> */}
         </div>
       </div>
       <div className={style.pcOnly}>
