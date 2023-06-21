@@ -87,6 +87,7 @@
     color: #fff;
     display: flex;
     flex-direction: column;
+    /* height:100vh; */
 }
 
 .profile {
@@ -139,7 +140,7 @@
 }
 
 .profileImg {
-    margin-top: -2%;
+    margin-top: -4%;
 }
 
 hr.border {

@@ -204,6 +204,16 @@ hr.border {
     display: none;
 }
 
+.table{
+    width: 90%;
+    margin: 2rem auto;
+    background-color: #0D162F;
+    color: #0D162F;
+}
+.ant-table-thead{
+    background-color: #F49867;
+
+}
 
 @media screen and (max-width: 1050px) {
     .menu {
@@ -259,11 +269,17 @@ hr.border {
         display: contents;
     }
 
+    .table{
+        flex-wrap: wrap;
+        overflow-x: scroll;
+    }
+
     .itemCont {
         flex-direction: row;
         justify-content: space-around;
         margin: 0;
-        background: rgba(92, 111, 251, 0.1);
+        /* background: rgba(92, 111, 251, 0.1); */
+        background: #141414;
         border-top: 2px solid #25283D;
         box-shadow: 0px -8px 20px rgba(0, 0, 0, 0.15);
         border-radius: 4px;

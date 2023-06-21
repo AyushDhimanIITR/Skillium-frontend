@@ -1,0 +1,9 @@
+.ant-table-thead .ant-table-cell {
+    background-color: #0D162F !important;
+    color: #fff !important;
+}
+
+.ant-table-tbody .ant-table-cell{
+    background-color: #141414 !important;
+    color: #fff !important;
+}
