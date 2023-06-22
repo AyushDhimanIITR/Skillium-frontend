@@ -12,7 +12,7 @@
 }
 
 .topBlock {
-    margin: 8rem 8rem 5rem 8rem;
+    margin: 5rem 8rem 5rem 8rem;
     /* background: white; */
     align-items: center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -36,11 +36,13 @@
 
 .head {
     text-align: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     font-size: 3rem;
+    line-height: 2.9rem;
     display: flex;
+    width: 100%;
     font-weight: 800;
-    margin-left: 6rem;
+    margin-left: 5rem;
     margin-bottom: 3rem;
     padding-top: 2rem;
     vertical-align: middle;
@@ -49,15 +51,16 @@
 .btnCont {
     display: flex;
     text-align: center;
-
-    margin-right: 35%;
-    justify-content: space-between;
+    padding-top: 0.5rem;
+    /* margin-right: 35%; */
+    /* justify-content: space-between; */
 }
 
 .duration {
-    margin: auto 1rem;
+    margin: auto ;
+    margin-left: 2rem;
     cursor: pointer;
-    padding: 11px 27px;
+    padding: 10px 27px;
     color: #F9F8F8;
     z-index: 1;
     border-radius: 20px;
@@ -80,7 +83,7 @@
 .sessions {
     margin: auto 1rem;
     cursor: pointer;
-    padding: 11px 27px;
+    padding: 10px 27px;
     color: #F9F8F8;
     z-index: 1;
     border-radius: 20px;
@@ -116,7 +119,7 @@
     border-radius: 20px;
     position: absolute;
     padding: 2px;
-    /* z-index: -1; */
+    
     inset: 0;
     content: '';
     background: linear-gradient(90deg, #AE67FA 1.84%, #F49867 100%);
@@ -192,9 +195,14 @@
 }
 
 .img {
-    margin-left: -6rem;
-    scale: 0.9;
+    margin-left: -3rem;
+    scale: 0.8;
     margin-bottom: 0;
+}
+.img>img{
+    bottom: 3rem;
+    /* margin-bottom: auto; */
+    position: relative;
 }
 
 .gridCont {
