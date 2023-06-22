@@ -14,6 +14,7 @@ import { useCookies } from "react-cookie";
 import { API_DOMAIN } from "../../js/config";
 import EditFormModal from "../Modal/Modal";
 
+
 const Dashboard = () => {
   const path = window.location.pathname.slice(1);
   // console.log(path);
@@ -23,12 +24,13 @@ const Dashboard = () => {
   const [, removeCookie] = useCookies();
   const navigate = useNavigate();
 
+
   const toggleModal = () => {
     setModal(!modal);
   };
 
   useEffect(() => {
-    fetch(`${API_DOMAIN}students/DPS200305`, {
+    fetch(`${API_DOMAIN}students/${localStorage.getItem('user')}`, {
       method: "GET",
       headers: {
         // Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -43,12 +45,14 @@ const Dashboard = () => {
         setData(data);
       })
       .catch((err) => console.log(err));
-  }, [cookie]);
+  }, []);
 
   const logout = () => {
     removeCookie("token");
+    localStorage.removeItem('user');
     navigate("/login");
   };
+
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>

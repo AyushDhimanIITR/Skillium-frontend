@@ -3,6 +3,7 @@ import styles from "./modal.module.css";
 import {API_DOMAIN} from "../../js/config";
 import {useCookies} from "react-cookie";
 
+
 const EditFormModal = ({ setModal }) => {
 
   const [cookie] = useCookies();
@@ -18,16 +19,7 @@ const EditFormModal = ({ setModal }) => {
     return () => window.removeEventListener("keydown", close);
   }, []);
 
-  // useEffect (() => {
-  //   (async() => {
-  //     const userData = await fetch(`${API_DOMAIN}students/DPS200305` ,{
-  //       headers:{
-  //         Authorization: `Bearer ${cookie.token}`
-  //       },
-  //     });
-  //     //logic
-  //   })()
-  // }, []);
+
 
 //   const [value, setValue] = useState("");
   const handleChange = (e) => {
@@ -38,7 +30,7 @@ const EditFormModal = ({ setModal }) => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     console.log(formData);
-    const data = await fetch(`${API_DOMAIN}students/DPS200305`, {
+    const data = await fetch(`${API_DOMAIN}students/${localStorage.getItem('user')}`, {
       method:"PATCH",
       headers:{
         Authorization: `Bearer ${cookie.token}`,
@@ -57,7 +49,7 @@ const EditFormModal = ({ setModal }) => {
       <div
         className={styles.modalBackground}
         onClick={() => setModal(false)}
-      ></div>
+        ></div>
       <div className={styles.modalContainer}>
         <div className={styles.titleCloseBtn}>
           <button

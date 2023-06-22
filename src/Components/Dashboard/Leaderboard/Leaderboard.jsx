@@ -41,6 +41,7 @@ const Leaderoard = () => {
 
   const logoutBtn = () => {
     removeCookie("token");
+    localStorage.removeItem('user');
     navigate("/login");
   };
 

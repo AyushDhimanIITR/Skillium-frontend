@@ -7,11 +7,13 @@ import { API_DOMAIN } from "../../js/config";
 import { useNavigate } from "react-router-dom";
 import {useCookies } from "react-cookie";
 
+
 const Login = () => {
   const [apis, contextHolder] = notification.useNotification();
   const [, setCookie] = useCookies();
   const navigate = useNavigate();
 
+  
   const errorNotification = (type) => {
     apis[type]({
       message: "Login failed",
@@ -35,7 +37,8 @@ const Login = () => {
       });
       const response = await data.json();
       setCookie("token", response.jwtToken);
-      // localStorage.setItem('token', response.jwtToken);
+      // localStorage.setItem('token', response.jwtToken)
+      localStorage.setItem('user', values.email);
       console.log(response);
       navigate("/profile");
     } catch (error) {
@@ -43,6 +46,9 @@ const Login = () => {
       console.log(error);
     }
   };
+
+  
+
   return (
     <>
       <div className={style.loginCont}>
