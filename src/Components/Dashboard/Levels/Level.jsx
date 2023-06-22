@@ -24,7 +24,7 @@ const Level = () => {
   const [, removeCookie] = useCookies();
 
   useEffect(() => {
-    fetch(`${API_DOMAIN}students/DPS200305`, {
+    fetch(`${API_DOMAIN}students/${localStorage.getItem('user')}`, {
       method: "GET",
       headers: {
         // Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -43,6 +43,7 @@ const Level = () => {
 
   const logoutBtn = () => {
     removeCookie("token");
+    localStorage.removeItem('user');
     navigate("/login");
   };
 
