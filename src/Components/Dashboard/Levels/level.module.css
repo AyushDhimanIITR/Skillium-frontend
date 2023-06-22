@@ -242,6 +242,21 @@ hr.border {
     margin: auto;
 }
 
+.locked{
+    padding: 0.8rem 1rem;
+    display: none !important;
+    background: #fff;
+    color: #4E4D4D;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    cursor: not-allowed !important;
+    /* z-index: 10 !important; */
+    /* pointer-events: none; */
+}
+
 @media screen and (max-width: 1050px) {
     .menu {
         display: none;
