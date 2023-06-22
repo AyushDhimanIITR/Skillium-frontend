@@ -17,7 +17,7 @@ const columns = [
     },
     {
         title: 'Diamonds',
-        dataIndex: 'diamonds',
+        dataIndex: 'totalDiamonds',
         key: 'diamonds',
     },
 

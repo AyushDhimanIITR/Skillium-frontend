@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./level.module.css";
 import Logo from "../../../Assets/miniLogo.svg";
 import chart from "../../../Assets/chart.svg";
@@ -9,18 +9,44 @@ import logout from "../../../Assets/logout.svg";
 import { NavLink, useNavigate } from "react-router-dom";
 import gameBg from "../../../Assets/Rectangle67.png";
 import pcOnly from "../../../Assets/pcOnly.svg";
-import {useCookies} from "react-cookie";
+import { useCookies } from "react-cookie";
+import { API_DOMAIN } from "../../../js/config";
+
+
 
 const Level = () => {
   const path = window.location.pathname.slice(1);
   console.log(path);
 
+  const [data, setData] = useState([]);
+  const [cookie] = useCookies();
+
   const [, removeCookie] = useCookies();
+
+  useEffect(() => {
+    fetch(`${API_DOMAIN}students/DPS200305`, {
+      method: "GET",
+      headers: {
+        // Authorization: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${cookie.token}`,
+        Accept: "application/json",
+        // "Content-Type": 'application/json'
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log(data);
+        setData(data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   const logoutBtn = () => {
     removeCookie("token");
     navigate("/login");
   };
+
+  const score = 0;
 
   const navigate = useNavigate();
   return (
@@ -86,42 +112,57 @@ const Level = () => {
           <div className={style.gridHead}>Title</div>
           <div className={style.gridHead}>Diamonds</div>
           <div className={style.gridHead}>Score</div>
-          <a
+          {/* <a
             style={{ zIndex: 10, cursor: "pointer" }}
             target="_blank"
             href="https://play.unity.com/webgl/7e334cf1-4d0c-4dd5-a5b1-dd6046e76b22?screenshot=false&embedType=embed"
-            rel="noopener noreferrer" aria-label="Click here to open game"
-          >
+            rel="noopener noreferrer"
+            aria-label="Click here to open game"
+          > */}
+          <a href="/gamescreen">
             <div className={style.gridItem}>
               <img src={gameBg} alt="game-thumbnail" />
             </div>
           </a>
-          <div className={style.gridItem}><a
-            style={{ zIndex: 10, cursor: "pointer" }}
+          <div className={style.gridItem}>
+            <a
+              style={{ zIndex: 10, cursor: "pointer" }}
+              target="_blank"
+              href="https://play.unity.com/webgl/7e334cf1-4d0c-4dd5-a5b1-dd6046e76b22?screenshot=false&embedType=embed"
+              rel="noopener noreferrer"
+              aria-label="Click here to open game"
+            >
+              The Art of Budgeting{" "}
+            </a>
+          </div>
+          <div className={style.gridItem}>{data.totalDiamonds}</div>
+          <div className={style.gridItem}>{data.rank}</div>
+          <a
+            // style={{ zIndex: 10}}
             target="_blank"
             href="https://play.unity.com/webgl/7e334cf1-4d0c-4dd5-a5b1-dd6046e76b22?screenshot=false&embedType=embed"
-            rel="noopener noreferrer" aria-label="Click here to open game"
-          >The Art of Budgeting </a></div>
-          <div className={style.gridItem}>45</div>
-          <div className={style.gridItem}>45</div>
-          <div className={style.gridItem}>
+            rel="noopener noreferrer"
+            aria-label="Click here to open game"
+          >
+          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>
+            <img src={gameBg} alt="game-thumbnail" />
+          </div></a>
+          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>Banking Toolkit</div>
+          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div>
+          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div>
+          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>
             <img src={gameBg} alt="game-thumbnail" />
           </div>
-          <div className={style.gridItem}>Banking Toolkit</div>
-          <div className={style.gridItem}>45</div>
-          <div className={style.gridItem}>45</div>
-          <div className={style.gridItem}>
+          {/* {!score ? <>hi</>: <>bye</>} */}
+          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>Level 3</div>
+          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div>
+          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div>
+          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>
             <img src={gameBg} alt="game-thumbnail" />
           </div>
-          <div className={style.gridItem}>Level 3</div>
-          <div className={style.gridItem}>45</div>
-          <div className={style.gridItem}>45</div>
-          <div className={style.gridItem}>
-            <img src={gameBg} alt="game-thumbnail" />
-          </div>
-          <div className={style.gridItem}>Level 4</div>
-          <div className={style.gridItem}>45</div>
-          <div className={style.gridItem}>45</div>
+          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>Level 4</div>
+          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div>
+          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div>
         </div>
         <div className={style.game}>
           {/* <iframe

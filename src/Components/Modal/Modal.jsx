@@ -6,7 +6,7 @@ import {useCookies} from "react-cookie";
 const EditFormModal = ({ setModal }) => {
 
   const [cookie] = useCookies();
-  const [formData, setFormData] = useState({name: "",grade: "",school: ""});
+  const [formData, setFormData] = useState({name: "",email: "",school: ""});
 
   useEffect(() => {
     const close = (e) => {
@@ -45,10 +45,11 @@ const EditFormModal = ({ setModal }) => {
         Accept: "application/json",
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({name: formData.name})
+      body: JSON.stringify({name: formData.name, email: formData.email})
     });
     console.log(data);
     setModal(false);
+    window.location.reload();
   };
 
   return (
@@ -81,20 +82,20 @@ const EditFormModal = ({ setModal }) => {
             />
             
             <input
-              placeholder="Grade"
-              type="text"
+              placeholder="Email"
+              type="email"
               onChange={handleChange}
-              value={formData.grade}
-              id="grade" name="grade"
+              value={formData.email}
+              id="email" name="email"
             />
             
-            <input
+            {/* <input
               placeholder="School"
               type="text"
               onChange={handleChange}
               value={formData.school}
               id="school" name="school"
-            />
+            /> */}
             
             <button className={styles.submitBtn} type="submit">Submit</button>
           </form>
