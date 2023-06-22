@@ -101,9 +101,8 @@ const About = () => {
         <div className={style.contact}>
           <div className={style.contactHead}>Still have any doubts?</div>
           <a
-            href="https://forms.gle/PE57e8LDndV7VpGMA"
-            aria-label="Book a free demo"
-            target="_blank"
+            href="mailto:skilliumlabs1@gmail.com"
+            aria-label="Contact Us"
             rel="noopener noreferrer"
             style={{ textDecoration: "none" }}
           >

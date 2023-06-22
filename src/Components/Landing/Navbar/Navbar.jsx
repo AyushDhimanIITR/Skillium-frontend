@@ -18,8 +18,8 @@ const Navbar = () => {
       <div className={style.menu}>
        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <a href="#">Home</a>
-        <a href="#programs">Programs</a>
-        <a href="#contact">About Us</a>
+        <a href={`${path === "/login"? `${"/"}`: `${"#programs"}`}`}>Programs</a>
+        <a href={`${path === "/login"? `${"/"}`: `${"#contact"}`}`}>About Us</a>
         {/* <button className={style.hideLoginBtn} onClick={() => navigate("/login")}>Sign In</button> */}
         <button className={`${path==="/login" ? `${style.hideLoginBtn}`: ""}`} onClick={() => navigate("/login")}>Sign In</button>
       </div>
