@@ -6,14 +6,14 @@ import { UserOutlined, SmileOutlined } from '@ant-design/icons';
 // import Avatars from "react-avatar-edit";
 import storage from "../../../js/firebaseConfig";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-// import { API_DOMAIN } from "../../../js/config";
-// import {useCookies} from "react-cookie";
+import { API_DOMAIN } from "../../../js/config";
+import {useCookies} from "react-cookie";
 
 const ProfilePicChanger = (props) => {
     // console.log(props.data.profilePhoto);
     
     const [profileImage, setProfileImage] = useState("");
-    //   const [cookie] = useCookies();
+      const [cookie] = useCookies();
     // const [crop, setCrop] = useState("");
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [preview, setPreview] = useState(null)
@@ -43,11 +43,22 @@ const ProfilePicChanger = (props) => {
             () => {
                 // download url
                 // localStorage.removeItem('image');
-                getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+                getDownloadURL(uploadTask.snapshot.ref).then(async(url) => {
                     setLink(url);
                     console.log(url);
                     localStorage.setItem('image', url);
                     openNotification();
+                    //post the image to database
+                    const data = await fetch(`${API_DOMAIN}students/${localStorage.getItem('user')}`, {
+                        method:"PATCH",
+                        headers:{
+                          Authorization: `Bearer ${cookie.token}`,
+                          Accept: "application/json",
+                          "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({profilePhoto: url})
+                      });
+                    //   console.log(data);
                 });
             }
             );
@@ -79,7 +90,7 @@ const ProfilePicChanger = (props) => {
         api.open({
             message: 'Uploading',
             description:
-                `Profile picture uploading- ${percent}%`,
+                `Profile picture uploaded- ${percent}%`,
             icon: (
                 <SmileOutlined
                 style={{
@@ -90,8 +101,8 @@ const ProfilePicChanger = (props) => {
         });
     };
     // console.log(image);
-    // props.fun(image);
-
+    
+    
     return (
         <>
             {contextHolder}
@@ -99,10 +110,10 @@ const ProfilePicChanger = (props) => {
                 <p>{props.data.name}</p>
                 <p> {props.data.id} </p>
             </div>
-            {!image ? (
+            {!image && !props.data.profilePhoto ? (
                 <Avatar className={style.profileImg} size={128} icon={<UserOutlined />} />
             ) : (
-                <img loading="lazy" id="profilePicFromFirebase" src={image} className={style.profileImg} alt="profile-pic" />
+                <img loading="lazy" id="profilePicFromFirebase" src={ image? `${image}`: `${props.data.profilePhoto}`} className={style.profileImg} alt="profile-pic" />
             )}
 
 

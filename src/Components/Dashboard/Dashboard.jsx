@@ -14,7 +14,6 @@ import { useCookies } from "react-cookie";
 import { API_DOMAIN } from "../../js/config";
 import EditFormModal from "../Modal/Modal";
 
-
 const Dashboard = () => {
   const path = window.location.pathname.slice(1);
   // console.log(path);
@@ -24,13 +23,12 @@ const Dashboard = () => {
   const [, removeCookie] = useCookies();
   const navigate = useNavigate();
 
-
   const toggleModal = () => {
     setModal(!modal);
   };
 
   useEffect(() => {
-    fetch(`${API_DOMAIN}students/${localStorage.getItem('user')}`, {
+    fetch(`${API_DOMAIN}students/${localStorage.getItem("user")}`, {
       method: "GET",
       headers: {
         // Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -49,10 +47,9 @@ const Dashboard = () => {
 
   const logout = () => {
     removeCookie("token");
-    localStorage.removeItem('user');
+    localStorage.removeItem("user");
     navigate("/login");
   };
-
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
@@ -65,7 +62,9 @@ const Dashboard = () => {
           <a href="/">Skillium Labs</a>
         </div>
         <div className={style.menu}>
-          <a href="#contact">{(!data.name) ? "Student Dashboard": (`Hi, ${data.name}`)}</a>
+          <a href="#contact">
+            {!data.name ? "Student Dashboard" : `Hi, ${data.name}`}
+          </a>
         </div>
       </div>
       <div className={style.sidebar}>
@@ -91,7 +90,7 @@ const Dashboard = () => {
               style={{ color: "inherit", textDecoration: "inherit" }}
               to="/profile"
             >
-              <img src={profile} alt="student-dashboard-profile-btn" />
+              <img src={profile} alt="student-dashboard-profile-btn" />a
             </NavLink>
           </button>
         </div>
@@ -105,7 +104,11 @@ const Dashboard = () => {
         <div className={style.content}>
           <div className={style.profile}>
             <p>{path}</p>
-            <img className={style.dp} alt="profile pic" src={dp} />
+            <img
+              className={style.dp}
+              alt="profile pic"
+              src={data.profilePhoto}
+            />
           </div>
           <div className={style.nameCont}>
             <ProfilePicChanger data={data} />

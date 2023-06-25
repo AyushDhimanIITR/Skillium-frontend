@@ -21,7 +21,6 @@ const SchoolDashboard = () => {
   const [cookie] = useCookies();
   const [, removeCookie] = useCookies();
   const navigate = useNavigate();
-  const { Search } = Input;
   const [query, setQuery] = useState("");
 
 
