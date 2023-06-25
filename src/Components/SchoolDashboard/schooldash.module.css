@@ -47,45 +47,24 @@
     cursor: pointer;
 }
 
-.sidebar {
-    height: 100%;
-    width: 4rem;
-    position: fixed;
-    /* background: rgba(92, 111, 251, 1); */
-    box-shadow: 4px 0px 11px rgba(0, 0, 0, 0.15);
-    background: #031B34;
-}
-
-.itemCont {
-    margin: 5rem 0;
-    display: flex;
-    flex-direction: column;
-}
-
 .logout {
     display: flex;
     flex-direction: column;
     margin-top: 10rem;
 }
 
-.sidebarBtn {
-    border: none;
-    background-color: inherit;
-    cursor: pointer;
-    appearance: none;
-    padding: 1.2rem 0;
-    transition: transform 0.7s ease-in-out;
-}
-
-.sidebarBtn:hover {
-    transform: rotate(360deg);
+.school{
+    display: flex;
+    gap: 1rem;
+    margin-left: 2rem;
 }
 
 .content {
-    background: #141414;
-    margin-left: 4rem;
+    background: #040C18;
+    /* margin-left: 4rem; */
     color: #fff;
     display: flex;
+    padding: 1rem;
     flex-direction: column;
     /* height:100vh; */
 }
@@ -129,6 +108,72 @@
     flex-direction: column;
 }
 
+.banner{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    margin: 2rem auto;
+    border-radius: 4px;
+background: rgba(92, 111, 251, 0.10);
+    align-items: center;
+    width: 90%;
+}
+
+.search{
+    /* width: 20%; */
+    border-radius: 8px;
+    margin-left: 4.4rem; 
+}
+.search form {
+    /* width: 85%; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .search input[type="text"] {
+    height: 42px;
+    width: 18%;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    /* line-height: 30px; */
+    border-radius: 24px 0 0 24px;
+    border: 1px solid #f3f2f2;
+    border: none;
+    padding-left: 15px;
+    background: rgba(255, 255, 255, 0.10);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.search button {
+    color: #fff;
+    height: 44px;
+    /* height: 92%; */
+    /* display: flex; */
+    justify-content: center;
+    /* align-items: center; */
+    width: 4%;
+    
+    border: none;
+    border-radius: 0 22px 22px 0;
+    background: rgba(255, 255, 255, 0.10);
+    /* background-color: #422335; */
+    cursor: pointer;
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    /* margin-top: 0.65%; */
+  }
+    
+
+.table{
+    width: 90%;
+    margin: 2rem auto;
+    background-color: #0D162F;
+    color: #0D162F;
+}
+
 .name {
     margin-top: 2rem;
     font-size: 2rem;
@@ -154,11 +199,15 @@ hr.border {
 }
 
 .scoreCard {
-    width: 15%;
-    margin: 2rem auto;
-    justify-content: space-around;
-    text-align: center;
-    display: flex;
+    /* width: 15%; */
+    margin-right: 2rem;
+    /* justify-content: space-around; */
+    /* text-align: center; */
+    /* display: flex; */
+}
+
+.school>p{
+    font-size: 2rem;
 }
 
 .rank,
@@ -208,6 +257,11 @@ hr.border {
     display: none;
 }
 
+.sidebarBtn{
+    margin-left: 1rem;
+    background-color: transparent;
+    padding: 1px !important;
+}
 
 @media screen and (max-width: 1050px) {
     .menu {

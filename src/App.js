@@ -5,6 +5,7 @@ import GameScreen from "./Components/Dashboard/GameScreen";
 import { API_DOMAIN } from "./js/config";
 import { useCookies } from "react-cookie";
 import ErrorPage from "./Components/Error";
+import SchoolDashboard from "./Components/SchoolDashboard/SchoolDash";
 const Navbar = lazy(() => import('./Components/Landing/Navbar/Navbar'));
 const LandingPage = lazy(() => import("./Components/Landing/LandingPage/LandingPage"));
 const Login = lazy(() => import('./Components/Login/Login'));
@@ -50,6 +51,7 @@ function App() {
                 <Route path="/levels" element={<Level />} />
                 <Route path="/gamescreen" element={<GameScreen />} />
                 <Route path="/leaderboard" element={<Leaderoard />} />
+              <Route path="/school" element={<SchoolDashboard />} />
               </>
             ) : <> <Route element={<ErrorPage />} />
             </>}
