@@ -41,7 +41,7 @@ const Leaderoard = () => {
 
   const logoutBtn = () => {
     removeCookie("token");
-    localStorage.removeItem('user');
+    localStorage.removeItem("user");
     navigate("/login");
   };
 
@@ -95,7 +95,7 @@ const Leaderoard = () => {
       <div className={style.content}>
         <div className={style.profile}>
           <p>{path}</p>
-          <img className={style.dp} alt="profile pic" src={dp} />
+          {/* <img className={style.dp} alt="profile pic" src={data.profilePhoto} /> */}
         </div>
         <Table
           className={style.table}

@@ -48,8 +48,8 @@ const Level = () => {
   };
 
   const score = 0;
-
   const navigate = useNavigate();
+
   return (
     <div
       style={{
@@ -106,7 +106,7 @@ const Level = () => {
       <div className={style.content}>
         <div className={style.profile}>
           <p>{path}</p>
-          <img className={style.dp} alt="profile pic" src={dp} />
+          <img className={style.dp} alt="profile pic" src={data.profilePhoto} />
         </div>
         <div className={style.gridContainer}>
           <div className={style.gridHead}>Level</div>
