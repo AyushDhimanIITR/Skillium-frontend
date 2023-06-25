@@ -73,6 +73,14 @@ const SchoolDashboard = () => {
             </button>
         </div>
       </div>
+        <div className={style.navmenu}>
+          <a href="#contact">
+            School Dashboard 
+          </a>
+          <button className={style.sidebarBtn} onClick={logout}>
+            <img src={logoutImg} alt="student-dashboard-logout-btn" />
+            </button>
+        </div>
       <div className={style.content}>
         <div className={style.banner}>
           <div className={style.school}>
@@ -81,14 +89,14 @@ const SchoolDashboard = () => {
           </div>
           <div className={style.scoreCard}>
             <p className={style.rank}>{len}</p>
-            <p style={{ color: "#A9AAAB" }}>Total Students</p>
+            <p className={style.totalStd} style={{ color: "#A9AAAB" }}>Total Students</p>
           </div>
         </div>
         <div className={style.search}>
             <form>
               <input
                 type="text"
-                placeholder="Search By Item Name"
+                placeholder="Search..."
                 onChange={(e) => {
                   setQuery(e.target.value);
                 }}
