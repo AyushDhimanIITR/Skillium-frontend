@@ -79,37 +79,6 @@
     /* height:100vh; */
 }
 
-.profile {
-    display: flex;
-    width: calc(100% - 4rem);
-    justify-content: space-between;
-    position: relative;
-    align-items: center;
-}
-
-.profile::after {
-    position: absolute;
-    content: "";
-    background: #A9AAAB;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    bottom: 00%;
-    width: calc(100%);
-    height: 2px;
-    margin-left: 1.8rem;
-    text-decoration: underline;
-}
-
-.profile>p {
-    padding-left: 2rem;
-    font-size: 2rem;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-
-.profile>img {
-    height: 60px;
-    width: 60px;
-}
 
 .nameCont {
     display: flex;
@@ -182,32 +151,7 @@
     margin: 2rem auto;
     background-color: #0D162F;
     color: #0D162F;
-    flex-wrap: wrap;
-    overflow-x: scroll;
-}
 
-.name {
-    margin-top: 2rem;
-    font-size: 2rem;
-    width: calc(100vw - 7.5rem);
-    padding: 1rem 0rem 5rem 0;
-    text-align: center;
-    background: #5C6FFB1A;
-    font-weight: 600;
-}
-
-.profileImg {
-    margin-top: -6%;
-    width: 200px;
-    height: 100%;
-    margin-bottom: 1rem;
-}
-
-hr.border {
-    display: flex;
-    height: 4rem;
-    border: 1px solid #fff;
-    margin-left: 25%;
 }
 
 .scoreCard {
@@ -222,8 +166,7 @@ hr.border {
     font-size: 2rem;
 }
 
-.rank,
-.diamonds {
+.rank{
     font-size: 1.6rem;
     font-weight: 600;
     background: linear-gradient(90deg, #AE67FA 1.84%, #F49867 100%);
@@ -232,9 +175,6 @@ hr.border {
     background-clip: text;
 }
 
-.border {
-    margin: auto 2rem;
-}
 
 .profileCard {
     background: #5C6FFB1A;
@@ -251,19 +191,6 @@ hr.border {
     font-size: 1.5rem;
 }
 
-.editBtn {
-    display: flex;
-    align-items: center;
-    background: inherit;
-    border: 1.5px solid #F9F8F8;
-    color: #F9F8F8;
-    font-size: 1rem;
-    border-radius: 6px;
-    padding: 10px 20px;
-    margin-bottom: 3rem;
-    justify-content: center;
-    cursor: pointer;
-}
 
 .navmenu {
     display: none;
@@ -328,49 +255,12 @@ hr.border {
     .search button{
         width: 10%;
     }
-    
-    .name {
-        width: calc(100vw - 5rem);
-        font-size: 1.5rem;
-    }
-
-    .profile>p {
-        font-size: 1.2rem;
-        font-weight: 700;
-    }
-
-    .profile>img {
-        height: 40px;
-        width: 40px;
-    }
-
-    .profileImg {
-        margin-top: -20%;
-        height: auto;
-        width: 40%;
-    }
-
-    hr.border {
-        margin-left: 90%;
-    }
-
-    .profileCard {
-        width: 70%;
-    }
-
-    .profileCard p {
-        font-size: 1.2rem;
-    }
-
-    .editBtn {
-        width: 80%;
-    }
 
     .navmenu {
         display: flex;
         background: #040C18;
         justify-content: space-between;
-        padding: 0 1rem;
+        padding: 0.5rem 1rem;
         align-items: center;
     }
     
@@ -379,22 +269,16 @@ hr.border {
         color: #fff;
         font-size: 1.5rem;
     }
-    
-
-    .itemCont {
-        flex-direction: row;
-        justify-content: space-around;
-        margin: 0;
-        background: rgba(92, 111, 251, 0.1);
-        border-top: 2px solid #25283D;
-        box-shadow: 0px -8px 20px rgba(0, 0, 0, 0.15);
-        border-radius: 4px;
-    }
 
     .sidebarBtn {
         padding: 0;
         border: none;
         background: none;
+    }
+
+    .table{
+        flex-wrap: wrap;
+        overflow-x: scroll;
     }
 
 }
