@@ -47,15 +47,15 @@ function App() {
             </Route>
             {isAuth ? (
               <> 
-        <Suspense fallback={<Loader />} > 
+
                 <Route path="/profile" element={<Dashboard />} />
                 <Route path="/levels" element={<Level />} />
                 <Route path="/gamescreen" element={<GameScreen />} />
                 <Route path="/leaderboard" element={<Leaderoard />} />
               <Route path="/school" element={<SchoolDashboard />} />
-            </Suspense> 
+
              </> 
-            ) : <> <Route element={<ErrorPage />} /> 
+            ) : <> <Route element={<Loader />} /> 
             </>} 
           </Routes>
       </Suspense>
