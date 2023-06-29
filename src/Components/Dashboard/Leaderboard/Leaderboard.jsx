@@ -4,7 +4,7 @@ import Logo from "../../../Assets/miniLogo.svg";
 import chart from "../../../Assets/chart.svg";
 import gameConsole from "../../../Assets/gameConsole.svg";
 import profile from "../../../Assets/profile.svg";
-import dp from "../../../Assets/profilePic.png";
+// import dp from "../../../Assets/profilePic.png";
 import logout from "../../../Assets/logout.svg";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Table } from "antd";

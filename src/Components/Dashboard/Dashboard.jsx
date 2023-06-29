@@ -5,7 +5,7 @@ import chart from "../../Assets/chart.svg";
 import profile from "../../Assets/profile.svg";
 import gameConsole from "../../Assets/gameConsole.svg";
 import logoutImg from "../../Assets/logout.svg";
-import dp from "../../Assets/profilePic.png";
+// import dp from "../../Assets/profilePic.png";
 import edit from "../../Assets/edit.svg";
 import Level from "./Levels/Level";
 import { NavLink, useNavigate } from "react-router-dom";
