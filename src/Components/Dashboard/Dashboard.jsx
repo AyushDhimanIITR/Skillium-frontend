@@ -104,11 +104,16 @@ const Dashboard = () => {
         <div className={style.content}>
           <div className={style.profile}>
             <p>{path}</p>
-            <img
-              className={style.dp}
-              alt="profile pic"
-              src={data.profilePhoto}
-            />
+            <div className={style.profileCont} >
+              <button className={style.sidebarBtnMobileView} onClick={logout}>
+                <img src={logoutImg} alt="student-dashboard-logout-btn" />
+              </button>
+              <img
+                className={style.dp}
+                alt="profile pic"
+                src={data.profilePhoto}
+              />
+            </div>
           </div>
           <div className={style.nameCont}>
             <ProfilePicChanger data={data} />

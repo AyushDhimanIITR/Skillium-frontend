@@ -77,6 +77,16 @@
     transition: transform 0.7s ease-in-out;
 }
 
+.sidebarBtnMobileView{
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    appearance: none;
+    padding: 1.2rem 0;
+    transition: transform 0.7s ease-in-out;
+    display: none;
+}
+
 .sidebarBtn:hover {
     transform: rotate(360deg);
 }
@@ -117,7 +127,7 @@
     text-transform: uppercase;
 }
 
-.profile>img {
+.profileCont>img {
     height: 60px;
     width: 60px;
 }
@@ -276,6 +286,15 @@ hr.border {
     .sidebarBtn {
         padding: 0;
         background: none;
+    }
+    
+    .sidebarBtnMobileView {
+        padding: 0;
+        display: contents;
+        background: none;
+    }
+    .sidebarBtnMobileView>img{
+        padding-bottom: 0.5rem;
     }
 
 }
