@@ -11,6 +11,7 @@ import gameBg from "../../../Assets/Rectangle67.png";
 import pcOnly from "../../../Assets/pcOnly.svg";
 import { useCookies } from "react-cookie";
 import { API_DOMAIN } from "../../../js/config";
+import GameLocked from "../../../Assets/lockedGame.svg";
 
 
 
@@ -47,7 +48,7 @@ const Level = () => {
     navigate("/login");
   };
 
-  const score = 0;
+  const score = 1;
   const navigate = useNavigate();
 
   return (
@@ -138,7 +139,7 @@ const Level = () => {
           </div>
           <div className={style.gridItem}>{data.totalDiamonds}</div>
           <div className={style.gridItem}>{data.rank}</div>
-          <a
+          {/* <a
             // style={{ zIndex: 10}}
             target="_blank"
             href="https://play.unity.com/webgl/7e334cf1-4d0c-4dd5-a5b1-dd6046e76b22?screenshot=false&embedType=embed"
@@ -147,23 +148,44 @@ const Level = () => {
           >
           <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>
             <img src={gameBg} alt="game-thumbnail" />
-          </div></a>
-          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>Banking Toolkit</div>
+          </div></a> */}
+          {/* <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>Banking Toolkit</div>
           <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div>
-          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div>
-          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>
+          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div> */}
+          {/* <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>
             <img src={gameBg} alt="game-thumbnail" />
-          </div>
+          </div> */}
           {/* {!score ? <>hi</>: <>bye</>} */}
-          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>Level 3</div>
+          {/* <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>Level 3</div>
           <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div>
-          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div>
-          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>
-            <img src={gameBg} alt="game-thumbnail" />
-          </div>
-          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>Level 4</div>
-          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div>
-          <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div>
+        <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div> */}
+        {
+          score==2 ? ( 
+            <>
+            <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>
+              <img src={gameBg} alt="game-thumbnail" />
+            </div>
+            <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>Level 4</div>
+            <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div>
+            <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div> 
+            </>
+          ): (
+            <>
+            <div className={style.gridItem}>
+              <img src={GameLocked} />
+               </div>
+            <div className={style.gridItem}>
+              Complete Previous level
+               </div>
+            <div className={style.gridItem}>
+               </div>
+            <div className={style.gridItem}>
+               </div>
+            </>
+
+          )
+        }
+          
         </div>
         <div className={style.game}>
           {/* <iframe
