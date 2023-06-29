@@ -245,7 +245,7 @@ hr.border {
 .locked{
     padding: 0.8rem 1rem;
     display: none !important;
-    background: #fff;
+    background-color: #fff;
     color: #4E4D4D;
     text-align: center;
     display: grid;
