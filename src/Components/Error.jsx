@@ -1,5 +1,4 @@
 import { Button, Result } from "antd";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ErrorPage = () => {

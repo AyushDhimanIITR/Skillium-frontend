@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 // import ProfilePicChanger from "./Levels/profilePicChanger";
 import { useCookies } from "react-cookie";
 import { API_DOMAIN } from "../../js/config";
-import { Input, Table } from "antd";
+import { Table } from "antd";
 import columns from "./column";
 import { Outlet } from "react-router-dom";
 import {SearchOutlined} from "@ant-design/icons";
