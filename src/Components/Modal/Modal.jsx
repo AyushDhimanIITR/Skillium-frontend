@@ -66,6 +66,7 @@ const EditFormModal = ({ setModal }) => {
           <form onSubmit={handleSubmit}>
 
             <input
+              className={styles.inputMobileView}
               placeholder="Your Name"
               type="text"
               onChange={handleChange}
@@ -74,6 +75,7 @@ const EditFormModal = ({ setModal }) => {
             />
             
             <input
+              className={styles.inputMobileView}
               placeholder="Email"
               type="email"
               onChange={handleChange}
@@ -89,7 +91,7 @@ const EditFormModal = ({ setModal }) => {
               id="school" name="school"
             /> */}
             
-            <button className={styles.submitBtn} type="submit">Submit</button>
+            <button className={styles.submitBtn} type="submit">Submit <span></span> </button>
           </form>
         </div>
         <div className={styles.footer}></div>
