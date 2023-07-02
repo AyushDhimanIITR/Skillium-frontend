@@ -233,16 +233,16 @@ hr.border {
     font-weight: 600;
 }
 
-.pcOnly{
+.pcOnly {
     display: none;
 }
 
-.game{
+.game {
     display: flex;
     margin: auto;
 }
 
-.locked{
+.locked {
     padding: 0.8rem 1rem;
     display: none !important;
     background-color: #fff;
@@ -256,6 +256,14 @@ hr.border {
     /* z-index: 10 !important; */
     /* pointer-events: none; */
 }
+
+.LeaderIcon:hover,
+.profileIcon:hover,
+.LevelIcon:hover {
+    stroke: #fff;
+    /* stroke-width: 10px; */
+}
+
 
 @media screen and (max-width: 1050px) {
     .menu {
@@ -319,11 +327,11 @@ hr.border {
         display: none;
     }
 
-    .pcOnly{
+    .pcOnly {
         display: contents;
     }
-    
-    .pcOnlyCard{
+
+    .pcOnlyCard {
         margin: 50% 2rem;
         display: flex;
         align-items: center;
@@ -332,19 +340,21 @@ hr.border {
         flex-direction: column;
     }
 
-    .pcOnlyCard>img{
+    .pcOnlyCard>img {
         border: 10px solid #031B34;
         height: 40px;
         width: 40px;
         border-radius: 50%;
         background: #031B34;
     }
-    .pcOnlyCard>p{
+
+    .pcOnlyCard>p {
         color: #0A0B0F;
         font-size: 1.2rem;
         font-weight: 600;
     }
-    .pcOnlyCard>button{
+
+    .pcOnlyCard>button {
         background: #0D162F;
         color: #fff;
         border-radius: 4px;

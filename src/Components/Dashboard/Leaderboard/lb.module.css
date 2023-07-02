@@ -77,6 +77,14 @@
     transition: transform 0.7s ease-in-out;
 }
 
+.LeaderIcon:hover,
+.profileIcon:hover,
+.LevelIcon:hover {
+    stroke: #fff;
+    /* stroke-width: 10px; */
+}
+
+
 .sidebarBtn:hover {
     transform: rotate(360deg);
 }
@@ -204,13 +212,14 @@ hr.border {
     display: none;
 }
 
-.table{
+.table {
     width: 90%;
     margin: 2rem auto;
     background-color: #0D162F;
     color: #0D162F;
 }
-.ant-table-thead{
+
+.ant-table-thead {
     background-color: #F49867;
 }
 
@@ -268,7 +277,7 @@ hr.border {
         display: contents;
     }
 
-    .table{
+    .table {
         flex-wrap: wrap;
         overflow-x: scroll;
     }
