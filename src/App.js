@@ -16,6 +16,7 @@ const Level = lazy(() => import('./Components/Dashboard/Levels/Level'));
 function App() {
 
   const [isAuth, setIsAuth] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(null);
   const [cookie] = useCookies();
 
   useEffect(() => {
@@ -28,9 +29,14 @@ function App() {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        console.log(data.roles);
         // setIsAuth(!isAuth);
-        setIsAuth(data)
+        if (data.roles==="ROLE_ADMIN") {
+          setIsAdmin(data);
+          setIsAuth(null);
+        }else if(data.roles==="ROLE_USER"){
+          setIsAuth(data);
+        }
       })
       .catch((err) => console.log(err));
   }, [cookie]);
@@ -47,16 +53,20 @@ function App() {
             </Route>
             {isAuth ? (
               <> 
-
                 <Route path="/profile" element={<Dashboard />} />
                 <Route path="/levels" element={<Level />} />
                 <Route path="/gamescreen" element={<GameScreen />} />
                 <Route path="/leaderboard" element={<Leaderoard />} />
-              <Route path="/school" element={<SchoolDashboard />} />
-
              </> 
             ) : <> <Route element={<Loader />} /> 
             </>} 
+
+          {isAdmin ? (
+            
+            <Route path="/profile" element={<SchoolDashboard />} />
+            
+            ) :  <Route element={<Loader />} /> 
+        }
           </Routes>
       </Suspense>
     </BrowserRouter>
