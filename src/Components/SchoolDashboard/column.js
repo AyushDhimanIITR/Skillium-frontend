@@ -23,6 +23,12 @@ const columns = [
     {
         title:"Id",
         dataIndex: 'id'
+    },
+    {
+        title:'Level',
+        dataIndex: 'finalScores',
+        render: (finalScores) => finalScores.length,
+        key:'level'
     }
 
 ]
