@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import style from "./dashboard.module.css";
 import Logo from "../../Assets/miniLogo.svg";
-import chart from "../../Assets/chart.svg";
-import profile from "../../Assets/profile.svg";
-import gameConsole from "../../Assets/gameConsole.svg";
+import { ReactComponent as LeaderIcon } from "../../Assets/chart.svg";
+import { ReactComponent as Profile } from "../../Assets/profile.svg";
+import { ReactComponent as LevelIcon } from "../../Assets/gameConsole.svg";
 import logoutImg from "../../Assets/logout.svg";
 // import dp from "../../Assets/profilePic.png";
 import edit from "../../Assets/edit.svg";
@@ -74,7 +74,8 @@ const Dashboard = () => {
               style={{ color: "inherit", textDecoration: "inherit" }}
               to="/leaderboard"
             >
-              <img src={chart} alt="student-dashboard-profile-btn" />
+              {/* <img src={chart} alt="student-dashboard-profile-btn" /> */}
+              <LeaderIcon className={style.LeaderIcon} />
             </NavLink>
           </button>
           <button className={style.sidebarBtn}>
@@ -82,7 +83,8 @@ const Dashboard = () => {
               style={{ color: "inherit", textDecoration: "inherit" }}
               to="/levels"
             >
-              <img src={gameConsole} alt="student-dashboard-profile-btn" />
+              {/* <img src={gameConsole} alt="student-dashboard-profile-btn" /> */}
+              <LevelIcon className={style.LevelIcon} />
             </NavLink>
           </button>
           <button className={style.sidebarBtn}>
@@ -90,7 +92,8 @@ const Dashboard = () => {
               style={{ color: "inherit", textDecoration: "inherit" }}
               to="/profile"
             >
-              <img src={profile} alt="student-dashboard-profile-btn" />a
+              {/* <img src={profile} alt="student-dashboard-profile-btn" /> */}
+              <Profile className={style.profileIcon} />
             </NavLink>
           </button>
         </div>
@@ -119,8 +122,8 @@ const Dashboard = () => {
             <ProfilePicChanger data={data} />
             {/* <div className={style.name}>
               <p>Moksh Singhal</p>
-            </div>
-            <Avatar size={64} icon="user" />
+              </div>
+              <Avatar size={64} icon="user" />
             <img className={style.profileImg} src={dp} alt="profile-pic" /> */}
             <div className={style.scoreCard}>
               <div>
@@ -149,17 +152,19 @@ const Dashboard = () => {
             <div className={style.itemCont}>
               <button className={style.sidebarBtn}>
                 <NavLink to="/leaderboard">
-                  <img src={chart} alt="student-dashboard-profile-btn" />
+                  <LeaderIcon className={style.LeaderIcon} />
+                  {/* <img src={chart} alt="student-dashboard-profile-btn" /> */}
                 </NavLink>
               </button>
               <button className={style.sidebarBtn}>
                 <NavLink to="/levels">
-                  <img src={gameConsole} alt="student-dashboard-profile-btn" />
+                  <LevelIcon className={style.profileIcon} />
+                  {/* <img src={gameConsole} alt="student-dashboard-profile-btn" /> */}
                 </NavLink>
               </button>
               <button className={style.sidebarBtn}>
                 <NavLink to="/profile">
-                  <img src={profile} alt="student-dashboard-profile-btn" />
+                  <Profile className={style.profileIcon} />
                 </NavLink>
               </button>
             </div>

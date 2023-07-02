@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import style from "./level.module.css";
 import Logo from "../../../Assets/miniLogo.svg";
-import chart from "../../../Assets/chart.svg";
-import gameConsole from "../../../Assets/gameConsole.svg";
-import profile from "../../../Assets/profile.svg";
+import { ReactComponent as LeaderIcon } from "../../../Assets/chart.svg";
+import { ReactComponent as Profile } from "../../../Assets/profile.svg";
+import { ReactComponent as LevelIcon } from "../../../Assets/gameConsole.svg";
 // import dp from "../../../Assets/profilePic.png";
 import logout from "../../../Assets/logout.svg";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -78,7 +78,8 @@ const Level = () => {
               style={{ color: "inherit", textDecoration: "inherit" }}
               to="/leaderboard"
             >
-              <img src={chart} alt="student-dashboard-profile-btn" />
+              <LeaderIcon className={style.LeaderIcon} />
+              {/* <img src={chart} alt="student-dashboard-profile-btn" /> */}
             </NavLink>
           </button>
           <button className={style.sidebarBtn}>
@@ -86,7 +87,8 @@ const Level = () => {
               style={{ color: "inherit", textDecoration: "inherit" }}
               to="/levels"
             >
-              <img src={gameConsole} alt="student-dashboard-profile-btn" />
+              <LevelIcon className={style.LevelIcon} />
+              {/* <img src={gameConsole} alt="student-dashboard-profile-btn" /> */}
             </NavLink>
           </button>
           <button className={style.sidebarBtn}>
@@ -94,7 +96,8 @@ const Level = () => {
               style={{ color: "inherit", textDecoration: "inherit" }}
               to="/profile"
             >
-              <img src={profile} alt="student-dashboard-profile-btn" />
+              <Profile className={style.profileIcon} />
+              {/* <img src={profile} alt="student-dashboard-profile-btn" /> */}
             </NavLink>
           </button>
         </div>
@@ -159,33 +162,33 @@ const Level = () => {
           {/* <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>Level 3</div>
           <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div>
         <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div> */}
-        {
-          score==2 ? ( 
-            <>
-            <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>
-              <img src={gameBg} alt="game-thumbnail" />
-            </div>
-            <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>Level 4</div>
-            <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div>
-            <div className={`${!score ? `${style.locked}`: `${style.gridItem}`}`}>45</div> 
-            </>
-          ): (
-            <>
-            <div className={style.gridItem}>
-              <img src={GameLocked} />
-               </div>
-            <div className={style.gridItem}>
-              Complete Previous level
-               </div>
-            <div className={style.gridItem}>
-               </div>
-            <div className={style.gridItem}>
-               </div>
-            </>
+          {
+            score == 2 ? (
+              <>
+                <div className={`${!score ? `${style.locked}` : `${style.gridItem}`}`}>
+                  <img src={gameBg} alt="game-thumbnail" />
+                </div>
+                <div className={`${!score ? `${style.locked}` : `${style.gridItem}`}`}>Level 4</div>
+                <div className={`${!score ? `${style.locked}` : `${style.gridItem}`}`}>45</div>
+                <div className={`${!score ? `${style.locked}` : `${style.gridItem}`}`}>45</div>
+              </>
+            ) : (
+              <>
+                <div className={style.gridItem}>
+                  <img src={GameLocked} />
+                </div>
+                <div className={style.gridItem}>
+                  Complete Previous level
+                </div>
+                <div className={style.gridItem}>
+                </div>
+                <div className={style.gridItem}>
+                </div>
+              </>
 
-          )
-        }
-          
+            )
+          }
+
         </div>
         <div className={style.game}>
           {/* <iframe
@@ -216,17 +219,20 @@ const Level = () => {
         <div className={style.itemCont}>
           <button className={style.sidebarBtn}>
             <NavLink to="/leaderboard">
-              <img src={chart} alt="student-dashboard-profile-btn" />
+              <LeaderIcon className={style.LeaderIcon} />
+              {/* <img src={chart} alt="student-dashboard-profile-btn" /> */}
             </NavLink>
           </button>
           <button className={style.sidebarBtn}>
             <NavLink to="/levels">
-              <img src={gameConsole} alt="student-dashboard-profile-btn" />
+              <LevelIcon className={style.LevelIcon} />
+              {/* <img src={gameConsole} alt="student-dashboard-profile-btn" /> */}
             </NavLink>
           </button>
           <button className={style.sidebarBtn}>
             <NavLink to="/profile">
-              <img src={profile} alt="student-dashboard-profile-btn" />
+              <Profile className={style.profileIcon} />
+              {/* <img src={profile} alt="student-dashboard-profile-btn" /> */}
             </NavLink>
           </button>
         </div>

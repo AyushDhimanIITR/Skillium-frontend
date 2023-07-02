@@ -77,7 +77,14 @@
     transition: transform 0.7s ease-in-out;
 }
 
-.sidebarBtnMobileView{
+.LeaderIcon:hover,
+.profileIcon:hover,
+.LevelIcon:hover {
+    stroke: #fff;
+    /* stroke-width: 10px; */
+}
+
+.sidebarBtnMobileView {
     border: none;
     background-color: inherit;
     cursor: pointer;
@@ -287,13 +294,14 @@ hr.border {
         padding: 0;
         background: none;
     }
-    
+
     .sidebarBtnMobileView {
         padding: 0;
         display: contents;
         background: none;
     }
-    .sidebarBtnMobileView>img{
+
+    .sidebarBtnMobileView>img {
         padding-bottom: 0.5rem;
     }
 
