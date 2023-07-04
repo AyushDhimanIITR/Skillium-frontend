@@ -48,6 +48,7 @@ function App() {
           <Routes>
             <Route path="*" element={<ErrorPage />} />
             <Route path="/" element={<Navbar />} >
+            <Route path="/gamescreen" element={<GameScreen />} />
               <Route path="/" element={<LandingPage />} />
               <Route path="/login" element={<Login />} />
             </Route>
@@ -55,7 +56,6 @@ function App() {
               <> 
                 <Route path="/profile" element={<Dashboard />} />
                 <Route path="/levels" element={<Level />} />
-                <Route path="/gamescreen" element={<GameScreen />} />
                 <Route path="/leaderboard" element={<Leaderoard />} />
              </> 
             ) : <> <Route element={<Loader />} /> 
