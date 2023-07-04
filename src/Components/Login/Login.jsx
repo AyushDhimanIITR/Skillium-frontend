@@ -39,6 +39,7 @@ const Login = () => {
       setCookie("token", response.jwtToken);
       // localStorage.setItem('token', response.jwtToken)
       localStorage.setItem('user', values.email);
+      localStorage.removeItem('image');
       console.log(response);
       navigate("/profile");
     } catch (error) {
