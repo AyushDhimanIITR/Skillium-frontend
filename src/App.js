@@ -31,10 +31,10 @@ function App() {
       .then((data) => {
         console.log(data.roles);
         // setIsAuth(!isAuth);
-        if (data.roles==="ROLE_ADMIN") {
+        if (data.roles === "ROLE_ADMIN") {
           setIsAdmin(data);
           setIsAuth(null);
-        }else if(data.roles==="ROLE_USER"){
+        } else if (data.roles === "ROLE_USER") {
           setIsAuth(data);
         }
       })
@@ -48,28 +48,28 @@ function App() {
           <Routes>
             <Route path="*" element={<ErrorPage />} />
             <Route path="/" element={<Navbar />} >
-            <Route path="/gamescreen" element={<GameScreen />} />
               <Route path="/" element={<LandingPage />} />
               <Route path="/login" element={<Login />} />
             </Route>
             {isAuth ? (
-              <> 
+              <>
                 <Route path="/profile" element={<Dashboard />} />
                 <Route path="/levels" element={<Level />} />
+                <Route path="/gamescreen" element={<GameScreen />} />
                 <Route path="/leaderboard" element={<Leaderoard />} />
-             </> 
-            ) : <> <Route element={<Loader />} /> 
-            </>} 
+              </>
+            ) : <> <Route element={<Loader />} />
+            </>}
 
-          {isAdmin ? (
-            
-            <Route path="/profile" element={<SchoolDashboard />} />
-            
-            ) :  <Route element={<Loader />} /> 
-        }
+            {isAdmin ? (
+
+              <Route path="/profile" element={<SchoolDashboard />} />
+
+            ) : <Route element={<Loader />} />
+            }
           </Routes>
-      </Suspense>
-    </BrowserRouter>
+        </Suspense>
+      </BrowserRouter>
     </div >
   );
 }
