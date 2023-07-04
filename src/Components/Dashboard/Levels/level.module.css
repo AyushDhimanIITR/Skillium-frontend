@@ -82,7 +82,7 @@
 }
 
 .content {
-    background: #141414;
+    background: #040C18;
     margin-left: 4rem;
     color: #fff;
     display: flex;
@@ -257,12 +257,11 @@ hr.border {
     /* pointer-events: none; */
 }
 
-.LeaderIcon:hover,
+/* .LeaderIcon:hover,
 .profileIcon:hover,
 .LevelIcon:hover {
     stroke: #fff;
-    /* stroke-width: 10px; */
-}
+} */
 
 
 @media screen and (max-width: 1050px) {
