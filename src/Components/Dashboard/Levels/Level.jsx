@@ -17,7 +17,7 @@ import GameLocked from "../../../Assets/lockedGame.svg";
 
 const Level = () => {
   const path = window.location.pathname.slice(1);
-  console.log(path);
+  // console.log(path);
 
   const [data, setData] = useState([]);
   const [cookie] = useCookies();
