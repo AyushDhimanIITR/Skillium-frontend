@@ -18,8 +18,8 @@ const ErrorPage = () => {
       loading? (<Loader />) : (
 
         <Result
-        status="403"
-        title="403"
+        status="404"
+        title="404"
         subTitle="Please Login again to access this page."
         extra={[
           <Button onClick={() => nav("/")} type="primary">
