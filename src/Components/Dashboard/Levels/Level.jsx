@@ -124,7 +124,7 @@ const Level = () => {
             rel="noopener noreferrer"
             aria-label="Click here to open game"
           > */}
-          <a href="/gamescreen">
+          <a target="blank" href="/gamescreen">
             <div className={style.gridItem}>
               <img src={gameBg} alt="game-thumbnail" />
             </div>
@@ -133,7 +133,7 @@ const Level = () => {
             <a
               style={{ zIndex: 10, cursor: "pointer" }}
               target="_blank"
-              href="https://play.unity.com/webgl/7e334cf1-4d0c-4dd5-a5b1-dd6046e76b22?screenshot=false&embedType=embed"
+              href="/gamescreen"
               rel="noopener noreferrer"
               aria-label="Click here to open game"
             >

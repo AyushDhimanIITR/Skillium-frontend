@@ -5,6 +5,7 @@ import GameScreen from "./Components/Dashboard/GameScreen";
 import { API_DOMAIN } from "./js/config";
 import { useCookies } from "react-cookie";
 import ErrorPage from "./Components/Error";
+import Test from "./Components/Test";
 const SchoolDashboard = lazy(() => import('./Components/SchoolDashboard/SchoolDash'));
 const Navbar = lazy(() => import('./Components/Landing/Navbar/Navbar'));
 const LandingPage = lazy(() => import("./Components/Landing/LandingPage/LandingPage"));

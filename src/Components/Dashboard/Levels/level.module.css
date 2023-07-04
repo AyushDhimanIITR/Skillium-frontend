@@ -84,6 +84,7 @@
 .content {
     background: #040C18;
     margin-left: 4rem;
+    min-height: 95vh;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -214,13 +215,13 @@ hr.border {
 }
 
 .gridHead {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 500;
     background: #0D162F;
     text-align: center;
     display: grid;
     align-items: center;
-    padding: 1rem 0.8rem;
+    padding: 0.6rem 0.8rem;
 }
 
 .gridItem {
@@ -230,7 +231,7 @@ hr.border {
     text-align: center;
     display: grid;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
@@ -251,7 +252,7 @@ hr.border {
     text-align: center;
     display: grid;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-weight: 600;
     cursor: not-allowed !important;
     /* z-index: 10 !important; */

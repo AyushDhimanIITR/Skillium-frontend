@@ -1,4 +1,5 @@
 import React from "react";
+import { Unity, useUnityContext } from "react-unity-webgl";
 
 const game = {
   gameScreen:
@@ -14,10 +15,17 @@ const Iframe = (props) => {
 };
 
 const GameScreen = () => {
+    const {unityProvider} = useUnityContext({
+      loaderUrl: "WebGl/Build/Loader.loader.js",
+      dataUrl: "WebGl/Build/build.data.unityweb",
+      frameworkUrl: "WebGl/Build/framework.framework.js.unityweb",
+      codeUrl: "WebGl/Build/buildWasm.wasm.unityweb",
+  });
   return (
-    <>
-      <Iframe iframe={game["gameScreen"]} allow="autoplay" />
-    </>
+      
+    <div>
+      <Unity unityProvider={unityProvider} style={{width:"100vw", height:"100vh", justifySelf: "center", alignItems:"center"}} />
+    </div>
   );
 };
 
