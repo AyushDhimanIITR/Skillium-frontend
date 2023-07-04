@@ -77,12 +77,11 @@
     transition: transform 0.7s ease-in-out;
 }
 
-.LeaderIcon:hover,
+/* .LeaderIcon:hover,
 .profileIcon:hover,
 .LevelIcon:hover {
     stroke: #fff;
-    /* stroke-width: 10px; */
-}
+} */
 
 .sidebarBtnMobileView {
     border: none;
@@ -99,7 +98,7 @@
 }
 
 .content {
-    background: #141414;
+    background: #040C18;
     margin-left: 4rem;
     color: #fff;
     display: flex;
@@ -137,6 +136,7 @@
 .profileCont>img {
     height: 60px;
     width: 60px;
+    border-radius: 50%;
 }
 
 .nameCont {

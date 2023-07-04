@@ -77,12 +77,11 @@
     transition: transform 0.7s ease-in-out;
 }
 
-.LeaderIcon:hover,
+/* .LeaderIcon:hover,
 .profileIcon:hover,
 .LevelIcon:hover {
     stroke: #fff;
-    /* stroke-width: 10px; */
-}
+} */
 
 
 .sidebarBtn:hover {
@@ -90,7 +89,8 @@
 }
 
 .content {
-    background: #141414;
+    /* background: #141414; */
+    background: #040C18;
     margin-left: 4rem;
     color: #fff;
     display: flex;
