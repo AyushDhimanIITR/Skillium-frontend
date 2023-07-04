@@ -7,7 +7,7 @@ const ErrorPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 700)
+    setTimeout(() => setLoading(false), 900)
   }, [])
   
   const nav = useNavigate();
