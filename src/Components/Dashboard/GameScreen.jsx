@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
 const game = {
@@ -15,6 +15,27 @@ const Iframe = (props) => {
 };
 
 const GameScreen = () => {
+  const handleKey = (e) => {
+    if(e.keyCode == 13){
+      document.documentElement.requestFullscreen();
+      return true;
+    }else return false;
+  }
+  const dataFetched = useRef(false);
+
+  useEffect(() => {
+    if(!dataFetched.current) {
+      // return;
+      dataFetched.current = true;
+      
+      alert("Press Enter Key for better experience");
+    } 
+    
+    // alert("Play in full screen mode for better experience")
+    window.addEventListener('keydown', handleKey);
+    
+    return() => window.removeEventListener('keydown', handleKey);
+  }, []);
     const {unityProvider} = useUnityContext({
       loaderUrl: "WebGl/Build/Loader.loader.js",
       dataUrl: "WebGl/Build/build.data.unityweb",
@@ -23,7 +44,7 @@ const GameScreen = () => {
   });
   return (
       
-    <div>
+    <div allow="fullscreen">
       <Unity unityProvider={unityProvider} style={{width:"100vw", height:"100vh", justifySelf: "center", alignItems:"center"}} />
     </div>
   );

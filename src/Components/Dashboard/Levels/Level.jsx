@@ -124,7 +124,7 @@ const Level = () => {
             rel="noopener noreferrer"
             aria-label="Click here to open game"
           > */}
-          <a target="blank" href="/gamescreen">
+          <a allow="fullscreen" target="blank" href="/gamescreen">
             <div className={style.gridItem}>
               <img src={gameBg} alt="game-thumbnail" />
             </div>
