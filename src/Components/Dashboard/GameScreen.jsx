@@ -24,12 +24,12 @@ const GameScreen = () => {
   const dataFetched = useRef(false);
 
   useEffect(() => {
-    if(!dataFetched.current) {
-      // return;
-      dataFetched.current = true;
+    // if(!dataFetched.current) {
+    //   // return;
+    //   dataFetched.current = true;
       
-      alert("Press Enter Key for better experience");
-    } 
+    //   alert("Press Enter Key for better experience");
+    // } 
     
     // alert("Play in full screen mode for better experience")
     window.addEventListener('keydown', handleKey);
