@@ -72,16 +72,17 @@ const EditFormModal = ({ setModal }) => {
               onChange={handleChange}
               value={formData.name}
               id="name" name="name"
+              required
             />
             
-            <input
+            {/* <input
               className={styles.inputMobileView}
               placeholder="Email"
               type="email"
               onChange={handleChange}
               value={formData.email}
               id="email" name="email"
-            />
+            /> */}
             
             {/* <input
               placeholder="School"

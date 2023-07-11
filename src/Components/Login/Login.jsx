@@ -89,10 +89,10 @@ const Login = () => {
                   style={{ padding: "0.5rem " }}
                 />
               </Form.Item>
-              <Form.Item>
-                {/* <Form.Item name="remember" valuePropName="checked" noStyle>
+              {/* <Form.Item>
+                <Form.Item name="remember" valuePropName="checked" noStyle>
                   <Checkbox>Remember me</Checkbox>
-                </Form.Item> */}
+                </Form.Item> 
                 <a
                   style={{ color: "#525252" }}
                   className="login-form-forgot"
@@ -100,7 +100,7 @@ const Login = () => {
                 >
                   Forgot password
                 </a>
-              </Form.Item>
+              </Form.Item> */}
 
               <Form.Item>
                 <Button
