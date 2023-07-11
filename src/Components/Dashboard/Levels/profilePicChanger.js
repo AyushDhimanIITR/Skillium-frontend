@@ -27,6 +27,10 @@ const ProfilePicChanger = (props) => {
     }
     const handleOk = () => {
         // const formData = new FormData();      
+        if(!profileImage) {
+            alert("No file selected");
+            return;
+        }
         const storageRef = ref(storage, `/files/${profileImage.name}`)
         const uploadTask = uploadBytesResumable(storageRef, profileImage)
         uploadTask.on(
@@ -71,7 +75,11 @@ const ProfilePicChanger = (props) => {
 
     const handleChange = async (e) => {
         e.preventDefault();
-        console.log(e.target.files);
+
+        console.log(e.target.files[0]);
+        // if(e.target.files.length == 0) {
+        //     console.log("no fle selected");
+        // };
         // setProfileImage(e.target.files[0])
         const file = e.target.files[0];
         if (file.size > 360000) {
@@ -122,7 +130,8 @@ const ProfilePicChanger = (props) => {
             </Button>
             <Modal title="Upload Picture" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
                 {/* <Avatars className={style.profileImg} width={300} height={300} onCrop={handleCrop} name="file" type="file" /> */}
-                <input type="file" accept="/image/*" name="file" onChange={handleChange} />
+                <input type="file" required accept="/image/*" name="file" onChange={handleChange} />
+                
             </Modal>
         </>
     )
